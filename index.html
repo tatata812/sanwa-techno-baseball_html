@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+  <title>三和テクノイノベーション硬式野球クラブ</title>
+  <meta name="description" content="<?php echo $des; ?>">
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:description" content="<?php echo $des; ?>">
+  <meta property="og:site_name"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>assets/img/fb.jpg">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="<?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?> | <?php echo $des; ?>">
+  <meta name="twitter:description" content="<?php echo $des; ?>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;800&family=Noto+Sans:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="assets/css/html5reset-1.6.1.css">
+  <link rel="stylesheet" href="assets/css/style.css?20260121">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+
+
+<body class="wrap">
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <!-- 上部（最初は非表示） -->
+    <div class="site-header__upper" id="jsHeaderUpper">
+      <div class="site-header__top-inner">
+        <a class="site-header__logo" href="index.html"><img src="assets/img/top/logo.png" alt=""></a>
+      </div>
+    </div>
+
+    <!-- メインビジュアル -->
+    <section class="mv" id="jsMV">
+      <div class="mv__inner"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+    </section>
+
+    <!-- 下部（最初はMVの下） -->
+    <nav class="site-header__lower" id="jsHeaderLower" aria-label="グローバルナビ">
+      <!-- PC用ナビ -->
+      <ul class="g-nav">
+        <li class="g-nav__item"><a class="g-nav__link" href="#">ホーム</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="#">クラブについて</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="#">ニュース</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="#">スケジュール</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="#">試合結果</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="#">部員名簿</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="#">お問い合わせ</a></li>
+      </ul>
+
+      <!-- SP用：ハンバーガー（CSSでSPのみ表示） -->
+      <button class="hamburger" type="button" id="jsHamburger" aria-controls="jsDrawer" aria-expanded="false"
+        aria-label="メニューを開く">
+        <span class="hamburger__line" aria-hidden="true"></span>
+        <span class="hamburger__line" aria-hidden="true"></span>
+        <span class="hamburger__line" aria-hidden="true"></span>
+      </button>
+
+    </nav>
+
+    <!-- 固定時のガタつき防止用スペーサー（JSで高さを入れる） -->
+    <div class="site-header__spacer" id="jsHeaderSpacer" aria-hidden="true"></div>
+  </header>
+
+  <!-- SPドロワー -->
+  <div class="drawer" id="jsDrawer" aria-hidden="true">
+    <div class="drawer__overlay" id="jsDrawerOverlay"></div>
+
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
+      <div class="drawer__header">
+        <span class="drawer__title">MENU</span>
+        <button class="drawer__close" type="button" id="jsDrawerClose" aria-label="メニューを閉じる">×</button>
+      </div>
+
+      <nav class="drawer__nav" aria-label="SPナビ">
+        <a class="drawer__link" href="#">メニュー1</a>
+        <a class="drawer__link" href="#">メニュー2</a>
+        <a class="drawer__link" href="#">メニュー3</a>
+        <div class="drawer__divider" aria-hidden="true"></div>
+        <a class="drawer__link" href="#">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="top-main">
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+        <div class="marquee__item"><img src="assets/img/top/main-visual-demo.jpg" alt=""></div>
+      </div>
+    </div>
+
+    <section class="top-section top-about">
+      <div class="top-section__title">
+        <h2 class="top-section__title-en">About the Club</h2>
+        <p class="top-section__title-jp">クラブについて</p>
+      </div>
+      <div class="top-about__main">
+        <img src="assets/img/top/top-about-main.png" alt="">
+      </div>
+      <p class="top-about__text">
+        三和テクノイノベーション硬式野球クラブは2025 年3 月に周南市初の公認野球チームとして発足しました。<br>
+        「野球をやりたい若い人が県外に出ていくことを防ぎたい」という強い思いが結実した、地域に根ざしたチームです。
+      </p>
+
+      <div class="top-about__item">
+
+        <div class="top-about__img">
+          <img src="assets/img/top/top-about01.png" alt="原田裕一">
+        </div>
+        <div class="top-about__content">
+          <div class="top-about__item-top">
+            <h2 class="top-about__item-lead">野球を続け<br>
+              完全燃焼できる<br>
+              環境を</h2>
+            <p class="top-about__item-text">高校野球、大学野球のあと完全燃焼できて、自分が引退すると言う
+              まで硬式野球を続けられる環境があったら、すごく周南市が盛り上
+              がるんじゃないでしょうか。</p>
+          </div>
+          <div class="top-about__item-bottom">
+            <p class="top-about__item-text">
+              硬式野球クラブチーム三和テクノイノベーション<br>
+              野球部長<br>
+              原田 裕一
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="top-about__item reverse">
+
+        <div class="top-about__img">
+          <img src="assets/img/top/top-about02.png" alt="中野 泰造">
+        </div>
+        <div class="top-about__content">
+          <div class="top-about__item-top">
+            <h2 class="top-about__item-lead">野球で地方を<br>
+              世界へ発信する<br>
+              愛されるチームに</h2>
+            <p class="top-about__item-text">必ず地方から発信できる。日本だけじゃなく世界にできる。山口県
+              周南市はその条件をクリアしている稀有な地方都市だ。</p>
+          </div>
+          <div class="top-about__item-bottom">
+            <p class="top-about__item-text">
+              硬式野球クラブチーム三和テクノイノベーション<br>
+              監督<br>
+              中野 泰造
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="btn-outline">
+        <span class="btn-outline__text">クラブについて詳しく</span>
+      </a>
+
+    </section>
+
+    <section class="top-section top-news">
+      <div class="top-section__title">
+        <h2 class="top-section__title-en">News</h2>
+        <p class="top-section__title-jp">ニュース</p>
+      </div>
+      <ul class="news-list top-news__content">
+        <li class="news-list__item">
+          <a href="#" class="news-list__link">
+            <time class="news-list__date" datetime="2026-01-01">2026.00.00</time>
+            <span class="news-list__label">試合結果</span>
+            <span class="news-list__title">第 00 回社会人野球〇〇〇〇選手権大会　決勝　VS〇〇〇〇〇〇〇〇〇</span>
+          </a>
+        </li>
+
+        <li class="news-list__item">
+          <a href="#" class="news-list__link">
+            <time class="news-list__date" datetime="2026-01-01">2026.00.00</time>
+            <span class="news-list__label">試合結果</span>
+            <span class="news-list__title">第 00 回社会人野球〇〇〇〇選手権大会　決勝　VS〇〇〇〇〇〇〇〇〇</span>
+          </a>
+        </li>
+
+        <li class="news-list__item">
+          <a href="#" class="news-list__link">
+            <time class="news-list__date" datetime="2026-01-01">2026.00.00</time>
+            <span class="news-list__label">試合結果</span>
+            <span class="news-list__title">第 00 回社会人野球〇〇〇〇選手権大会　決勝　VS〇〇〇〇〇〇〇〇〇</span>
+          </a>
+        </li>
+      </ul>
+      <a href="#" class="btn-outline">
+        <span class="btn-outline__text">ニュースへ</span>
+      </a>
+    </section>
+
+    <section class="top-section top-schedule">
+      <div class="top-section__title">
+        <h2 class="top-section__title-en">Schedule</h2>
+        <p class="top-section__title-jp">スケジュール</p>
+      </div>
+      <div class="top-schedule__item-wrap">
+
+        <div class="top-schedule__item">
+          <div class="top-schedule__date">
+            2026<span class="top-schedule__small">年</span> 4<span class="top-schedule__small">月</span><span
+              class="top-schedule__blue">12<span class="top-schedule__small">日</span></span><span
+              class="top-schedule__small"> (日)</span>
+          </div>
+          <div class="top-schedule__row top-schedule__row--gray">
+            <div class="top-schedule__label">試合／大会名称</div>
+            <div class="top-schedule__content top-schedule__name">練習試合</div>
+          </div>
+
+          <div class="top-schedule__row ">
+            <div class="top-schedule__label">場所</div>
+            <div class="top-schedule__content">〇〇〇〇球場</div>
+          </div>
+        </div>
+
+        <div class="top-schedule__item">
+          <div class="top-schedule__date">
+            2026<span class="top-schedule__small">年</span> 4<span class="top-schedule__small">月</span><span
+              class="top-schedule__blue">12<span class="top-schedule__small">日</span></span><span
+              class="top-schedule__small"> (日)</span>
+          </div>
+          <div class="top-schedule__row top-schedule__row--gray">
+            <div class="top-schedule__label">試合／大会名称</div>
+            <div class="top-schedule__content top-schedule__name">練習試合</div>
+          </div>
+
+          <div class="top-schedule__row ">
+            <div class="top-schedule__label">場所</div>
+            <div class="top-schedule__content">〇〇〇〇球場</div>
+          </div>
+        </div>
+
+        <div class="top-schedule__item">
+          <div class="top-schedule__date">
+            2026<span class="top-schedule__small">年</span> 4<span class="top-schedule__small">月</span><span
+              class="top-schedule__blue">12<span class="top-schedule__small">日</span></span><span
+              class="top-schedule__small"> (日)</span>
+          </div>
+          <div class="top-schedule__row top-schedule__row--gray">
+            <div class="top-schedule__label">試合／大会名称</div>
+            <div class="top-schedule__content top-schedule__name">練習試合</div>
+          </div>
+
+          <div class="top-schedule__row ">
+            <div class="top-schedule__label">場所</div>
+            <div class="top-schedule__content">〇〇〇〇球場</div>
+          </div>
+        </div>
+
+      </div>
+      <a href="#" class="btn-outline">
+        <span class="btn-outline__text">スケジュール一覧へ</span>
+      </a>
+    </section>
+
+    <section class="top-section top-result">
+      <div class="top-section__title">
+        <h2 class="top-section__title-en">Result</h2>
+        <p class="top-section__title-jp">試合結果</p>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!--main end-->
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <!-- フッターロゴ -->
+      <div class="site-footer__logo">
+        <a href="/">Site Title</a>
+      </div>
+
+      <!-- フッターナビ -->
+      <nav class="site-footer__nav">
+        <ul class="site-footer__nav-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- コピーライト -->
+    <div class="site-footer__bottom">
+      <p class="site-footer__copyright">
+        © 2026 Site Title
+      </p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

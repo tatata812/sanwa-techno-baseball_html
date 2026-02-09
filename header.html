@@ -1,0 +1,156 @@
+<!-- ヘッダー上部（最初は非表示） -->
+<div class="header-upper" id="jsHeaderUpper">
+  <div class="inner">
+    ヘッダー上部（ロゴ/問い合わせなど）
+  </div>
+</div>
+
+<!-- メインビジュアル -->
+<section class="mv" id="jsMV">
+  <div class="inner">メインビジュアル</div>
+</section>
+
+<!-- ヘッダー下部（最初はMVの下に配置） -->
+<nav class="header-lower" id="jsHeaderLower">
+  <div class="inner">
+    <ul class="nav">
+      <li><a href="#">メニュー1</a></li>
+      <li><a href="#">メニュー2</a></li>
+      <li><a href="#">メニュー3</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- 固定時のガタつき防止用スペーサー（JSで高さを入れる） -->
+<div class="header-spacer" id="jsHeaderSpacer" aria-hidden="true"></div>
+
+<main>
+  <section style="height: 2000px; padding: 40px 0;">
+    <div class="inner">本文</div>
+  </section>
+</main>
+
+<style>
+  .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.mv {
+  height: 420px;
+  background: #eee;
+  display: grid;
+  place-items: center;
+}
+
+/* 上部：初期は隠す */
+.header-upper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  .inner {
+    padding: 12px 16px;
+  }
+}
+
+/* 下部：初期は通常フロー（MVの下） */
+.header-lower {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+
+  .inner {
+    padding: 10px 16px;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  a {
+    text-decoration: none;
+    color: #222;
+  }
+}
+
+/* 固定状態 */
+.is-stuck {
+  .header-upper {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .header-lower {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    /* topはJSで上部の高さ分入れる */
+    top: var(--header-upper-h, 0px);
+  }
+}
+
+/* スペーサー：固定時だけ高さを確保（JSで値を入れる） */
+.header-spacer {
+  height: 0;
+}
+.is-stuck .header-spacer {
+  height: calc(var(--header-upper-h, 0px) + var(--header-lower-h, 0px));
+}
+
+</style>
+
+<script>
+  (() => {
+    const mv = document.getElementById("jsMV");
+    const upper = document.getElementById("jsHeaderUpper");
+    const lower = document.getElementById("jsHeaderLower");
+    const spacer = document.getElementById("jsHeaderSpacer");
+
+    if (!mv || !upper || !lower || !spacer) return;
+
+    const setHeights = () => {
+      const upperH = upper.offsetHeight || 0;
+      const lowerH = lower.offsetHeight || 0;
+      document.documentElement.style.setProperty("--header-upper-h", `${upperH}px`);
+      document.documentElement.style.setProperty("--header-lower-h", `${lowerH}px`);
+    };
+
+    // 初回＆リサイズ時に高さ更新
+    setHeights();
+    window.addEventListener("resize", setHeights);
+
+    // MVが見えなくなったら固定モード
+    const io = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        // MVが画面内にある間は通常、外に出たら固定
+        const stuck = !entry.isIntersecting;
+        document.body.classList.toggle("is-stuck", stuck);
+
+        // 固定に切り替わった直後に高さが変わるケース用
+        setHeights();
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+
+    io.observe(mv);
+  })();
+</script>

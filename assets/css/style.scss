@@ -1,0 +1,929 @@
+@use "config"as *;
+@use "top";
+@use "subpage";
+
+/* サイト全体スタイルシート */
+
+/* =========================
+   base（全ページ共通）
+========================= */
+* {
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.8;
+  color: #141414;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    "Meiryo", "Yu Gothic", "YuGothic",
+    sans-serif;
+  font-family: "Noto Sans", sans-serif;
+
+}
+
+p {
+  font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+  color: #141414;
+
+}
+
+a {
+  color: #141414;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  font-size: clamp(0.875rem, 0.838rem + 0.19vw, 1rem);
+}
+
+table {
+  font-size: clamp(0.875rem, 0.838rem + 0.19vw, 1rem);
+}
+
+dd,
+dt {
+  list-style: none;
+  font-size: clamp(0.875rem, 0.838rem + 0.19vw, 1rem);
+}
+
+
+/* =========================
+   表示制御
+========================= */
+.pc-block {
+  display: block;
+
+  @include tab {
+    display: none;
+  }
+}
+
+.sp-block {
+  display: none;
+
+  @include tab {
+    display: block;
+  }
+}
+
+/* =========================
+   メイン
+========================= */
+
+.main {
+  margin: 90px 0 0;
+  height: 1000px;
+
+  @include pc {
+    margin: 64px 0 0;
+  }
+
+  @include tab {
+    margin: 56px 0 0;
+  }
+}
+
+/* =========================
+   パンくずリスト
+========================= */
+.breadcrumbs-wrap {
+  background-color: $bg;
+
+  &--white {
+    background-color: #fff;
+  }
+
+  &__content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 12px 12px 0;
+    font-size: 11px;
+  }
+}
+
+
+/* =========================
+  site-header
+========================= */
+.site-header {
+
+  /* 上部：最初は隠す（fixedだけど非表示状態） */
+  &__upper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: $main;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  &__top-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 16px;
+  }
+
+
+  &__logo {
+    max-width: 400px;
+    display: block;
+  }
+
+  &__cta {
+    text-decoration: none;
+    color: #222;
+  }
+
+  /* 下部：初期はMVの下（通常フロー） */
+  &__lower {
+    background: #fff;
+
+    .inner {
+      padding: 10px 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+
+  /* スペーサー：固定時だけ高さを確保 */
+  &__spacer {
+    height: 0;
+  }
+}
+
+/* PC用グロナビ */
+.g-nav {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  padding: 12px 8px;
+  border-top: 2px solid $sub;
+  border-bottom: 2px solid $sub;
+
+
+  &__link {
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+  }
+
+  @include tab {
+    display: none; // SPではドロワーに任せる
+  }
+}
+
+/* =========================
+  ハンバーガー（SPのみ表示）
+========================= */
+.hamburger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
+  cursor: pointer;
+  margin: 0 8px 0 0;
+
+  &__line {
+    display: block;
+    height: 2px;
+    background: #222;
+    border-radius: 2px;
+
+    &+& {
+      margin-top: 6px;
+    }
+  }
+
+}
+
+// SP：is-stuck が付いたらハンバーガー表示
+@include tab {
+  body.is-stuck {
+    .hamburger {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+/* =========================
+  ドロワー
+========================= */
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  &__panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(86vw, 360px);
+    height: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &.is-open &__panel {
+    transform: translateX(0);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__close {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &__nav {
+    padding: 12px 16px 24px;
+    overflow-y: auto;
+  }
+
+  &__link {
+    display: block;
+    padding: 14px 8px;
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__divider {
+    height: 12px;
+  }
+}
+
+/* ドロワー開いてる間、背景スクロール止める */
+body.is-drawer-open {
+  overflow: hidden;
+}
+
+/* =========================
+  固定状態（JSで body に .is-stuck 付与）
+========================= */
+body.is-stuck {
+  .site-header__upper {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .site-header__lower {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    top: var(--header-upper-h, 0px);
+
+    @include tab {
+      left: auto;
+    }
+  }
+
+  .site-header__spacer {
+    height: calc(var(--header-upper-h, 0px) + var(--header-lower-h, 0px));
+  }
+}
+
+
+
+
+/* =================================
+footer
+ ================================= */
+
+.site-footer {
+  background: #f7f7f7;
+  margin-top: 80px;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include tab {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  /* ロゴ */
+  &__logo {
+    font-size: 18px;
+    font-weight: 700;
+
+    a {
+      color: #222;
+      text-decoration: none;
+    }
+  }
+
+  /* ナビ */
+  &__nav-list {
+    display: flex;
+    gap: 32px;
+
+    @include tab {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    a {
+      color: #222;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  /* 下部 */
+  &__bottom {
+    border-top: 1px solid #e5e5e5;
+    padding: 16px 24px;
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+  }
+}
+
+
+
+
+/* =====================================================
+  Scroll Fade-in Animation
+  ・JSで .action が付与されると表示される
+  ・fade-in-js は必須クラス
+  ・動きは variation クラスで切り替える
+===================================================== */
+
+/* ------------------------------
+  Base（共通）
+------------------------------ */
+.fade-in-js {
+  opacity: 0; // 初期状態：非表示
+  transition: opacity 0.5s ease, transform 0.7s ease;
+
+  &.action {
+    opacity: 1; // 表示
+    transform: none; // 各動きクラスの transform を解除
+  }
+}
+
+/* ------------------------------
+  Variations（動きの種類）
+  ※ fade-in-js と併用する
+------------------------------ */
+
+/* 下から上へフェードイン（基本） */
+.fade-up {
+  transform: translateY(30px); // 下に30pxずらした状態から表示
+}
+
+/* 上から下へフェードイン */
+.fade-down {
+  transform: translateY(-30px); // 上に30pxずらした状態から表示
+}
+
+/* 左からスライドイン */
+.fade-left {
+  transform: translateX(-40px); // 左に40pxずらした状態から表示
+}
+
+/* 右からスライドイン */
+.fade-right {
+  transform: translateX(40px); // 右に40pxずらした状態から表示
+}
+
+/* ズームイン（控えめ） */
+.fade-zoom {
+  transform: scale(0.95); // 少し小さい状態から等倍に戻る
+}
+
+/* ズームイン（強め・強調用） */
+.fade-zoom-big {
+  transform: scale(0.9); // かなり小さい状態から拡大
+}
+
+/* 回転しながらフェードイン（遊び要素） */
+.fade-rotate {
+  transform: translateY(20px) rotate(-3deg); // 少し傾けて下から表示
+}
+
+/* ------------------------------
+  Delay（表示タイミング調整）
+  ・複数要素を順番に表示したいときに使用
+------------------------------ */
+.fade-delay-1 {
+  transition-delay: 0.1s;
+}
+
+// 少し遅らせる
+.fade-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.fade-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.fade-delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* ------------------------------
+  Speed（表示速度調整・任意）
+------------------------------ */
+
+/* 速く表示したいとき */
+.fade-fast {
+  transition-duration: 0.35s, 0.5s;
+}
+
+/* ゆっくり上品に表示したいとき */
+.fade-slow {
+  transition-duration: 0.8s, 1.1s;
+}
+
+
+
+
+/* =========================
+   ロード
+========================= */
+.fade-in-onload {
+  opacity: 0;
+  animation: fadeInOnLoad 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInOnLoad {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-onload02 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInOnLoad02 1.5s ease forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeInOnLoad02 {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   editor style
+========================= */
+
+.editor-style {
+
+  &__block {
+    margin: 0 0 40px;
+  }
+
+  .aligncenter {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  .alignleft {
+    float: left;
+  }
+
+  img {
+    width: auto;
+  }
+
+  /* --------------------
+    見出し
+  -------------------- */
+  h1 {
+    font-size: 28px;
+    margin: 0 0 32px;
+    line-height: 1.4;
+
+    @include tab {
+      font-size: 20px;
+    }
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 56px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $main;
+    line-height: 1.4;
+
+    @include tab {
+      font-size: 18px;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 40px 0 12px;
+    line-height: 1.4;
+
+    @include tab {
+      font-size: 16px;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+    margin: 32px 0 8px;
+    line-height: 1.4;
+  }
+
+  /* --------------------
+    テキスト
+  -------------------- */
+  p {
+    margin: 0 0 16px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  a {
+    color: $main;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  /* --------------------
+    リスト
+  -------------------- */
+  ul,
+  ol {
+    margin: 16px 0 24px 1.5em;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  ul ul,
+  ol ol {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  /* --------------------
+    引用
+  -------------------- */
+  blockquote {
+    margin: 24px 0;
+    padding: 16px 24px;
+    background: #f5f7f6;
+    border-left: 4px solid $main;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* --------------------
+    テーブル（クラシック想定）
+    - HTMLを触れない前提なので table 自体をスクロール容器化
+  -------------------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+
+    /* ★SP横スクロール対応（HTML触らない版） */
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  th,
+  td {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+
+    /* ★列が多い時に潰れないように */
+    white-space: nowrap;
+  }
+
+  th {
+    background: #f0f5f2;
+    font-weight: 600;
+  }
+
+  /* --------------------
+    画像（クラシック想定）
+  -------------------- */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* クラシックのキャプションは .wp-caption を使うことが多い */
+  .wp-caption {
+    margin: 32px 0;
+    max-width: 100%;
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .wp-caption-text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+
+  /* figcaption で入るケースもあるので一応 */
+  figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+  }
+
+  /* --------------------
+    区切り線
+  -------------------- */
+  hr {
+    margin: 48px 0;
+    border: none;
+    height: 1px;
+    background: #ddd;
+  }
+
+  /* --------------------
+    コード
+  -------------------- */
+  pre {
+    margin: 24px 0;
+    padding: 16px;
+    background: #1e1e1e;
+    color: #fff;
+    font-size: 14px;
+    overflow-x: auto;
+    border-radius: 6px;
+  }
+
+  code {
+    font-family: Consolas, Monaco, monospace;
+  }
+
+  /* --------------------
+    定義リスト
+  -------------------- */
+  dl {
+    margin: 24px 0;
+  }
+
+  dt {
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  dd {
+    margin-left: 0;
+    margin-top: 4px;
+    padding-left: 16px;
+    border-left: 3px solid #e0e0e0;
+  }
+
+  /* --------------------
+    ボタン風リンク（任意）
+  -------------------- */
+  .is-style-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: $main;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
+
+
+
+/* =========================
+   共通パーツ
+========================= */
+
+// リンクボタン
+.btn-outline {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  max-width: 280px;
+  padding: 12px 0 12px 12px;
+  border: 2px solid #222;
+  background: #fff;
+  font-size: 14px;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+
+  &__text {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px 0 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    width: 14px;
+    height: 14px;
+    border-top: 4px solid #d0d0d0;
+    border-right: 4px solid #d0d0d0;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &:hover {
+    background: #fafafa;
+
+    &::after {
+      right: 24px;
+    }
+  }
+
+  @include tab {
+    max-width: 240px;
+
+    &::after {
+      right: 20px;
+    }
+  }
+}
+
+// ニュース一覧
+// ニュース一覧
+.news-list {
+  border-top: 1px solid #cfcfcf;
+
+  &__item {
+    border-bottom: 1px solid #cfcfcf;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 12px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    @include tab {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+
+  &__date {
+    flex: 0 0 90px;
+
+    @include tab {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__label {
+    flex: 0 0 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #7fb6f7;
+    color: #fff;
+
+    @include tab {
+      flex: 0 0 auto;
+      font-size: 14px;
+      padding: 0 14px;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+
+    @include tab {
+      flex: 0 0 100%;
+    }
+  }
+}

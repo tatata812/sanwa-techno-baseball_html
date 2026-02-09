@@ -1,0 +1,454 @@
+@use "config"as *;
+
+/* トップページスタイルシート */
+
+
+/* =================================
+トップのパーツ
+ ================================= */
+
+.top-section {
+  &__title {
+    text-align: center;
+  }
+
+  &__title-en {
+    font-size: 48px;
+    font-weight: 900;
+    color: #555;
+    margin: 0 0 8px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 3px;
+      background: #2f80ed; // 下の青線
+      border-radius: 2px;
+    }
+
+    @include tab {
+      font-size: 28px;
+    }
+  }
+
+  &__title-jp {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+
+    @include tab {
+      font-size: 12px;
+    }
+  }
+}
+
+/* =================================
+メインビジュアル 
+ ================================= */
+.mv {
+  // 例：PCは 16:9
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+
+  @include tab {
+    // 例：SPは縦長めに
+    // aspect-ratio: 3 / 4;
+
+  }
+}
+
+/* =================================
+メインビジュアルの下の流れる画像
+ ================================= */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  margin: 60px 0 0;
+
+  @include tab {
+    margin: 32px 0 0;
+  }
+
+  &__track {
+    display: flex;
+    width: fit-content;
+    animation: marquee 20s linear infinite;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 240px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+
+  @include tab {
+    &__item {
+      width: 160px;
+    }
+  }
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =================================
+クラブについて
+ ================================= */
+
+.top-about {
+  padding: 80px 16px;
+
+  @include tab {
+    padding: 40px 16px;
+  }
+
+  &__main {
+    max-width: 600px;
+    margin: 80px auto 40px;
+
+    @include tab {
+      margin: 40px auto 40px;
+    }
+  }
+
+  &__text {
+    max-width: 860px;
+    margin: 0 auto 120px;
+
+    @include tab {
+      margin: 0 auto 80px;
+    }
+  }
+
+  &__item {
+    max-width: 800px;
+    margin: 0 auto 120px;
+    display: flex;
+
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 100px;
+
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+
+      .top-about__img {
+        margin-left: -16px;
+
+        @include tab {
+          margin-left: 0;
+        }
+      }
+
+      @include tab {
+        flex-direction: column;
+      }
+    }
+
+  }
+
+  &__img {
+    max-width: 300px;
+    margin-right: -16px;
+    margin-top: -40px;
+    z-index: 2;
+
+    @include tab {
+      margin-right: 0;
+      max-width: 240px;
+
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__item-top {
+    border: 1px solid $sub;
+    padding: 24px;
+
+    @include tab {
+      padding: 12px;
+    }
+  }
+
+  &__item-lead {
+    border-left: $sub 5px solid;
+    padding: 0 0 0 24px;
+    font-size: 40px;
+    line-height: 1.4;
+    margin: 0 0 32px;
+    color: $main;
+    font-family:
+      "Hiragino Mincho ProN",
+      "Yu Mincho",
+      "游明朝",
+      "MS Mincho",
+      serif;
+
+    @include tab {
+      padding: 0 0 0 12px;
+      font-size: 24px;
+      margin: 0 0 12px;
+
+
+    }
+  }
+
+  &__item-text {}
+
+  &__item-bottom {
+    border: 1px solid $sub;
+    border-top: none;
+    padding: 24px;
+
+    @include tab {
+      padding: 12px;
+    }
+  }
+
+  &__item-text {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+
+}
+
+/* =================================
+ニュース
+ ================================= */
+.top-news {
+  padding: 220px 16px;
+  background: #f2f9ff;
+  clip-path: polygon(0 18%, 100% 0, 100% 82%, 0 100%);
+
+  @include tab {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 40px 16px;
+
+  }
+
+
+  &__content {
+    max-width: 1000px;
+    margin: 80px auto;
+
+    @include tab {
+      margin: 40px auto;
+    }
+  }
+}
+
+
+
+/* =================================
+スケジュール
+ ================================= */
+
+.top-schedule {
+  padding: 80px 16px;
+
+  @include tab {
+    padding: 40px 16px;
+  }
+
+  &__item-wrap {
+    max-width: 780px;
+    margin: 80px auto;
+
+    @include tab {
+      margin: 40px auto;
+    }
+  }
+
+  &__item {
+    border: 1px solid #cfcfcf;
+    background: #fff;
+    margin: 0 0 40px;
+
+    @include tab {
+      margin: 0 0 24px;
+    }
+
+    &:last-of-type {
+      margin: 0px;
+
+      @include tab {
+        margin: 0px;
+      }
+    }
+
+  }
+
+  &__date {
+    font-size: 22px;
+    font-weight: 700;
+    font-size: 28px;
+    padding: 4px 32px;
+
+    @include tab {
+      font-size: 20px;
+      padding: 4px 16px;
+
+    }
+  }
+
+
+  &__row {
+    display: flex;
+    align-items: center;
+    padding: 12px 32px;
+    font-size: 16px;
+
+
+
+    @include tab {
+      padding: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+
+    }
+
+    &--gray {
+      background-color: #f6f6f6;
+    }
+  }
+
+  &__label {
+    width: 160px;
+
+    @include tab {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__name {
+    color: #0b63c7;
+    font-size: 22px;
+    font-weight: 700;
+
+
+  }
+
+  &__small {
+    font-size: 17px;
+  }
+
+  &__blue {
+    color: #0b63c7;
+  }
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+
+}
+
+/* =================================
+
+ ================================= */
+
+.aaa {
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+
+}
