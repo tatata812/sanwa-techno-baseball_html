@@ -798,6 +798,13 @@
     max-width: 100%;
   }
 }
+
+/* =================================
+個人情報保護方針
+ ================================= */
+.page-privacy {
+  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+}
 /* サイト全体スタイルシート */
 /* =========================
    base（全ページ共通）
@@ -882,13 +889,18 @@ dt {
    パンくずリスト
 ========================= */
 .breadcrumbs-wrap {
-  background-color: #fff;
+  background-color: #EFF7FF;
 }
 .breadcrumbs-wrap__content {
   max-width: 1180px;
   margin: 0 auto;
   padding: 4px 12px;
   font-size: 11px;
+}
+@media (max-width: 820px) {
+  .breadcrumbs-wrap__content {
+    padding: 8px 12px 4px;
+  }
 }
 
 /* =========================
@@ -910,6 +922,7 @@ dt {
   transform: translateY(-100%);
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
+  min-height: 64px;
 }
 .site-header__top-inner {
   max-width: 1200px;
@@ -1440,8 +1453,15 @@ body.is-stuck .site-header__spacer {
   margin: 16px 0 24px 1.5em;
   padding: 0;
 }
+.editor-style ul li {
+  list-style: disc;
+}
+.editor-style ol li {
+  list-style: decimal;
+}
 .editor-style li {
   margin-bottom: 8px;
+  line-height: 1.7;
 }
 .editor-style ul ul,
 .editor-style ol ol {
