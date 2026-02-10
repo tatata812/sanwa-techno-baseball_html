@@ -89,33 +89,29 @@ dt {
    メイン
 ========================= */
 
-.main {
-  margin: 90px 0 0;
-  height: 1000px;
+// .main {
+//   margin: 90px 0 0;
+//   height: 1000px;
 
-  @include pc {
-    margin: 64px 0 0;
-  }
+//   @include pc {
+//     margin: 64px 0 0;
+//   }
 
-  @include tab {
-    margin: 56px 0 0;
-  }
-}
+//   @include tab {
+//     margin: 56px 0 0;
+//   }
+// }
 
 /* =========================
    パンくずリスト
 ========================= */
 .breadcrumbs-wrap {
-  background-color: $bg;
-
-  &--white {
-    background-color: #fff;
-  }
+  background-color: #fff;
 
   &__content {
-    max-width: 1240px;
+    max-width: 1180px;
     margin: 0 auto;
-    padding: 12px 12px 0;
+    padding: 4px 12px;
     font-size: 11px;
   }
 }
@@ -159,7 +155,6 @@ dt {
 
   /* 下部：初期はMVの下（通常フロー） */
   &__lower {
-    background: #fff;
 
     .inner {
       padding: 10px 16px;
@@ -187,6 +182,24 @@ dt {
   padding: 12px 8px;
   border-top: 2px solid $sub;
   border-bottom: 2px solid $sub;
+
+  &__item {
+
+    &.active {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -12px;
+        width: 45px;
+        height: 4px;
+        background: $sub;
+        transform: translateX(-50%);
+      }
+    }
+  }
 
 
   &__link {
@@ -297,12 +310,12 @@ dt {
   }
 
   &__title {
-    font-weight: 700;
+    flex: 1;
   }
 
   &__close {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #ddd;
     background: #fff;
     border-radius: 10px;
@@ -350,14 +363,20 @@ body.is-stuck {
     right: 0;
     z-index: 999;
     top: var(--header-upper-h, 0px);
+    background-color: #fff;
 
     @include tab {
       left: auto;
+      background-color: transparent;
     }
   }
 
   .site-header__spacer {
     height: calc(var(--header-upper-h, 0px) + var(--header-lower-h, 0px));
+
+    @include tab {
+      height: 64px;
+    }
   }
 }
 

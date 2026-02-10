@@ -8,1909 +8,271 @@
  ================================= */
 
 .subpage {
-
-  a {
-    text-decoration: underline;
-    color: $main;
-  }
-
-  &__ttl {
-    background-color: $bg;
-    padding: 20px 16px 30px;
-    text-align: center;
-    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-    font-weight: 800;
-    font-size: 38px;
-    color: $main;
-    line-height: 1.2;
-    margin: 0 0 100px;
-    position: relative;
-
-    @include tab {
-      font-size: 20px;
-      margin: 0 0 40px;
-    }
-
-    span {
-      display: block;
-      font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-      font-size: 28px;
-      color: #d9d9d9;
-      font-family: "Noto Sans", sans-serif;
-
-      @include tab {
-        font-size: 14px;
-      }
-    }
-
-    &::after {
-      content: url(../img/subpage/ttl-semicircle-bottom.png);
-      position: absolute;
-      bottom: -50px;
-      left: 50%;
-      transform: scale(1)translateX(-50%);
-      z-index: -1;
-
-      @include tab {
-        display: none;
-      }
-    }
-  }
-
-  &__main-visual-hero {
-    padding: 12px 24px;
-    max-width: 1400px;
-    margin: 0 auto 12px;
-    position: relative;
-
-
-    @include tab {
-      padding: 8px;
-      margin: 0 auto 32px;
-
-    }
-  }
-
-  &__ttl-hero {
-    padding: 20px 16px 30px;
-    text-align: center;
-    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-    font-weight: 800;
-    font-size: 38px;
-    color: $main;
-    line-height: 1.2;
-    margin: 0 0 40px;
-    position: relative;
-
-    @include tab {
-      font-size: 20px;
-      margin: 0 0 32px;
-      padding: 0 16px;
-
-    }
-
-    span {
-      display: block;
-      font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-      font-size: 28px;
-      color: #d9d9d9;
-      font-family: "Noto Sans", sans-serif;
-
-      @include tab {
-        font-size: 14px;
-      }
-    }
-  }
-
-  &__section {
-    max-width: 920px;
-    margin: 0 auto 120px;
-    padding: 0 16px;
-
-    @include tab {
-      margin: 0 auto 80px;
-    }
-  }
-
-  &__text {
-    margin: 0 0 12px;
-
-    &--green {
-      color: $main;
-      font-weight: bold;
-    }
-  }
-
-  &__text-big {
-    font-size: 20px;
-    margin: 0 0 12px;
-  }
-
-  &__text-right {
-    text-align: right;
-  }
-
-
-  // テーブル
-  &__table-wrap {
-    @media screen and (max-width: 1020px) {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    &--no-scroll {
-      @media screen and (max-width: 1019px) {
-        overflow-x: visible;
-        -webkit-overflow-scrolling: auto;
-
-        /* 中の table を画面幅に収める */
-        table {
-          width: 100%;
-          min-width: 0; // ← table側の min-width:740px を無効化
-          table-layout: fixed;
-        }
-
-        /* th を30%に */
-        th {
-          width: 25%;
-        }
-
-        /* td は残り */
-        td {
-          width: 75%;
-        }
-
-        /* ★ テキストを確実に折り返す */
-        th,
-        td {
-          white-space: normal !important; // nowrap を殺す
-          word-break: break-word;
-          overflow-wrap: anywhere;
-
-          @include sp {
-            font-size: 14px;
-            padding: 8px !important;
-          }
-        }
-      }
-    }
-  }
-
-  &__table {
-    background-color: #fff;
-    width: 100%;
-    min-width: 740px;
-    border-collapse: collapse;
-
-    /* 1200px以上のときだけはみ出す */
-    @media (min-width: 1020px) {
-      width: 1020px;
-      max-width: 1020px;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    a {
-      text-decoration: underline;
-      color: $main;
-    }
-
-    a[rel="noopener"]::after {
-      content: "↗";
-      display: inline-block;
-      margin-left: 0.3em;
-      font-size: 0.85em;
-    }
-
-    th {
-      background: #f2f2f2;
-      font-weight: bold;
-      text-align: center;
-      padding: 12px 10px;
-      border: 1px solid #ccc;
-      white-space: nowrap;
-      vertical-align: middle;
-
-      @include tab {
-        padding: 10px 8px;
-      }
-    }
-
-    td {
-      padding: 12px 10px;
-      border: 1px solid #ccc;
-      vertical-align: middle;
-      white-space: nowrap;
-
-      @include tab {
-        padding: 10px 8px;
-      }
-    }
-  }
-
-  // 説明リスト
-  &__description-wrap {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 16px;
-
-    dt {
-      flex-shrink: 0;
-      font-weight: bold;
-
-      &::after {
-        content: "：";
-      }
-    }
-
-    dd {
-      margin: 0;
-    }
-
-
-  }
-
-  &__list-num {
-    margin: 0 0 18px;
-
-    li {
-      list-style: decimal;
-      margin: 0 4px 0 16px;
-    }
-  }
-
-  &__list-dic {
-
-    li {
-      list-style: disc;
-      margin: 0 4px 0 16px;
-    }
-  }
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__margin {
-    margin: 0 0 80px;
-
-    @include tab {
-      margin: 0 0 40px;
-    }
-  }
-
-  &__margin-s {
-    margin: 0 0 24px;
-
-    @include tab {
-      margin: 0 0 18px;
-    }
-  }
-
-
-  // 下層ページのPDFにはマークつける
-  a[href$=".pdf"] {
-    position: relative;
-    padding-right: 3.2em;
-  }
-
-  a[href$=".pdf"]::after {
-    content: "PDF";
-    display: inline-block;
-    margin-left: 0.6em;
-    padding: 0.1em 0.4em;
-    font-size: 0.75em;
-    line-height: 1;
-    color: #fff;
-    background: #2e7d32;
-    border-radius: 3px;
-  }
-}
-
-/* 画像を含むPDFリンクは除外 */
-a[href$=".pdf"]:has(img) {
-  padding-right: 0;
-}
-
-a[href$=".pdf"]:has(img)::after {
-  content: none;
-}
-
-a[href$=".pdf"].is-icon {
-  padding-right: 0;
-}
-
-a[href$=".pdf"].is-icon::after {
-  content: none;
-}
-
-
-
-/* 行ホバー（PC向け） */
-@media (hover: hover) {
-  .subpage__table tbody tr:hover {
-    background: #ececec;
-  }
-}
-
-// ページ内リンク　メニュー
-.page-anchor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 0 0 60px;
-  max-width: 640px;
-
-  @include tab {
-    gap: 8px;
-    margin: 0 0 32px;
-  }
-
-  &__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px;
-    color: $main;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none !important;
-    white-space: nowrap;
-    transition: background 0.2s ease, color 0.2s ease;
-
-    @include tab {
-      font-size: 13px;
-      padding: 8px 10px;
-    }
-
-    &::after {
-      content: "↓";
-      margin-left: 6px;
-      font-size: 0.8em;
-    }
-
-    &:hover {
-      background: #60b358;
-      color: #fff;
-    }
-  }
-}
-
-// サブメニュー
-
-.subttl {
-  color: $main;
   background-color: $bg;
-  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-  padding: 18px 12px 18px 16px;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin: 40px 0 24px;
+  padding: 60px 16px 240px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top, center bottom;
+  background-size: 100% auto, 100% auto;
 
-  @include sp {
-    font-size: 20px;
-    padding: 16px 8px 16px 8px;
-
-  }
-}
-
-/* h3 相当 */
-.subttl-sub {
-  margin: 40px 0 32px;
-  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: $main;
-  position: relative;
-  display: inline-block;
-  padding-left: 40px;
-  z-index: 1;
-
-  @include sp {
-    font-size: 16px;
-    padding-left: 32px;
-    margin: 40px 0 24px;
-
-
+  // ===== スマホだけ変更 =====
+  @include tab {
+    background-size:
+      100% 300px, // ← 上の画像だけ高さ200px
+      100% auto; // ← 下はそのまま
+    padding: 32px 16px 100px;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 6px;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: #dff2e6; // 薄い緑の◯
-    border-radius: 50%;
-    z-index: -1;
-
-    @include tab {
-      width: 40px;
-      height: 40px;
-    }
-  }
-
-}
-
-// 見出しリスト
-
-.definition-block {
-  dl {
-    margin: 0;
-  }
-
-  dt {
-    margin-top: 40px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.4;
-    color: #222;
-
-
-    &:first-of-type {
-      margin-top: 0;
-    }
-
-  }
-
-  dd {
-    margin: 12px 0 0;
-    padding-left: 18px;
-    line-height: 1.8;
-    color: #333;
-
-    ol {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
-
-    li {
-      margin: 6px 0;
-    }
-
-    a {
-      color: #60b358;
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-
-/* =================================
-スポーツ協会について
- ================================= */
-
-.page-about {
-
-  &__flex {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-
-    @include tab {
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
-
-  &__picture {
-    max-width: 220px;
-    text-align: center;
-
-    img {
-      max-width: 150px;
-    }
-
-    p {
-      margin: 8px 0 0;
-    }
-  }
-
-  &__text-wrap {
-    flex: 1;
-  }
-}
-
-/* =================================
-スポーツ少年団
- ================================= */
-
-.page-youth-sports {
-
-  &__leaflet {
-    margin: 0 0 80px;
-
-    @include tab {
-      margin: 0 0 40px;
-    }
-  }
-
-  &__leaflet-img {
-    display: flex;
-    max-width: 400px;
-
-
-    @include sp {
-      flex-direction: column;
-      max-width: 200px;
-
-    }
-  }
-
-  &__btn-wrap {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 0 80px;
-  }
-
-  &__btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none !important;
-    min-height: 56px;
-    padding: 14px 24px;
-    border-radius: 999px;
-
-    background: #fff;
-    border: 2px solid #43a047; // 緑の枠
-    color: #43a047; // 文字も緑
-
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: center;
-    text-decoration: none;
-
-    transition: 0.25s ease;
-
-    flex: 1 1 320px;
-    max-width: 320px;
-
-    &:hover,
-    &:focus-visible {
-      background: #ecf9ef; // うっすら緑
-      box-shadow: 0 8px 20px rgba(67, 160, 71, 0.25);
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
-  }
-}
-
-/* =================================
-体力テスト
- ================================= */
-.page-fitness-test {
-
-  &__section {
-    &+& {
-      margin-top: 56px;
-    }
-  }
-
-  &__heading-text {
-    display: inline-block;
-  }
-
-  /* SPで横スクロールできるように */
-  &__table-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 2px;
-  }
-
-  &__table {
-    max-width: 900px;
-    min-width: 720px;
-    border-collapse: collapse;
-    table-layout: fixed;
-    background: #fff;
-
-    th,
-    td {
-      border: 1px solid #2b2b2b;
-      padding: 8px 16px;
-      vertical-align: middle;
-      text-align: center;
-      font-size: 18px;
-    }
-
-    thead th {
-      font-weight: 700;
-      background: #fff;
-    }
-  }
-
-  /* 記録集計ソフト */
-  &__table--software {
-    width: 320px;
-    min-width: 320px;
-
-  }
-
-  &__th--label {
-    text-align: left;
-    font-weight: 700;
-  }
-
-  &__td--file {
-    width: 110px;
-  }
-
-  &__file {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    transition: 0.2s ease;
-
-    &:hover {
-      opacity: 0.85;
-    }
-  }
-
-  &__file-icon {
-    width: 46px;
-    height: 46px;
-    object-fit: contain;
-    display: block;
-  }
-
-  /* 器具貸出 */
-  &__table--rental {
-    min-width: 980px;
-
-    tbody td {
-      padding: 22px 14px;
-    }
-  }
-
-  &__item {
-    margin: 0;
-    width: 100%;
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__item-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  &__note {
-    margin: 12px 0 0;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333;
-  }
-
-  /* 画面が広いときは横スクロール不要に */
-  @media (min-width: 1024px) {
-    &__table {
-      min-width: 0;
-    }
-  }
-
-  @media (max-width: 600px) {
-    &__heading {
-      font-size: 22px;
-      margin-bottom: 14px;
-    }
-
-    &__table {
-
-      th,
-      td {
-        padding: 14px 12px;
-        font-size: 16px;
-      }
-    }
-
-    &__item {
-      height: 220px;
-    }
-  }
-}
-
-
-/* =================================
-決算・事業報告書類
- ================================= */
-
-.page-financial-reports {
-
-  .docs-table-wrap {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .docs-table {
-    width: 100%;
-    min-width: 760px; // スマホで横スクロールさせるため
-    border-collapse: collapse;
-    table-layout: fixed;
-
-    th,
-    td {
-      border: 1px solid #222;
-      padding: 18px 16px;
-      vertical-align: middle;
-      background: #fff;
-    }
-
-    thead th {
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-align: center;
-      background: #f5f5f5;
-    }
-
-    &__year {
-      width: 180px;
-      text-align: center;
-      white-space: nowrap;
-    }
-  }
-
-  .docs-links {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
-
-    &__item {
-      margin: 0;
-    }
-
-    &__link {
-      color: #2aa62a;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-
-      &:hover {
-        text-decoration: none;
-      }
-
-      &:focus-visible {
-        outline: 2px solid #2aa62a;
-        outline-offset: 3px;
-        border-radius: 4px;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    .docs-table {
-
-      th,
-      td {
-        padding: 14px 12px;
-      }
-
-      &__year {
-        width: 160px;
-      }
-    }
-
-    .docs-links {
-      gap: 8px 14px;
-    }
-  }
-
-}
-
-/* =================================
-申請書
- ================================= */
-.page-applications {
-  &__icon {
-    width: 30px;
-    display: block;
+  &__content {
+    max-width: 880px;
     margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 40px;
 
-
-    &:after {
-      display: none !important;
+    @include tab {
+      padding: 40px 16px;
+      border-radius: 12px;
     }
   }
 
-  &__year {
-    font-size: 11px;
-    display: block;
-    text-align: center;
+  &__title-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 0 40px;
+
+    @include tab {
+      text-align: center;
+    }
   }
-}
 
-/* =================================
-全国大会等出場助成金制度
- ================================= */
-
-.tournament-subsidy {
-  &__icon {
-    width: 30px;
+  &__title {
     display: inline-block;
-    margin: 12px;
-  }
-}
-
-/* =================================
-全国大会等出場助成金制度
- ================================= */
-
-.page-class {
-
-  &__line {
-    width: 100px;
   }
 
-  &__pdf {
-    width: 50px;
-    display: block;
-    margin: 6px auto 0;
-  }
-
-  &__date {
-    text-align: center;
-    display: block;
-    color: $main;
-    font-size: 11px;
-  }
-}
-
-/* =================================
-アクセス
- ================================= */
-.page-access {
-  &__map-wrap {
+  &__title-en {
+    font-size: 40px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 8px;
     position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%; // 16:9
-    margin: 0 0 40px;
+    display: inline-block;
 
-    iframe {
+    &::after {
+      content: "";
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 3px;
+      background: #2f80ed; // 下の青線
+      border-radius: 2px;
     }
+
+    @include tab {
+      font-size: 28px;
+    }
+  }
+
+  &__title-jp {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
   }
 }
 
 /* =================================
 お問い合わせ
  ================================= */
-.page-contact {
-  &__form-wrap {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
 
-  &__ttl {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
+.page-contact {
+  background-image:
+    url("../img/subpage/page-news-top.png"),
+    url("../img/subpage/subpage-bottom.png");
+
 
   &__lead {
-    margin-bottom: 32px;
-    line-height: 1.7;
+    margin: 0 0 24px;
+
+    @include tab {
+      font-size: 13px;
+    }
   }
 
   &__form {
-    width: 100%;
+    padding: 24px 0;
+
+    @include tab {
+      padding: 0;
+    }
   }
 
-  &__item {
-    width: 100%;
-    margin-bottom: 24px;
+  &__list {
+    margin: 0;
   }
 
-  &__label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    line-height: 1.4;
+  &__row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #cfcfcf;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    @include tab {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 14px 0;
+    }
+  }
+
+  &__dt {
+    font-weight: 700;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
   &__required {
-    margin-left: 8px;
+    display: inline-block;
     font-size: 12px;
-    color: #e53935;
-    vertical-align: middle;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #e53935;
+    color: #fff;
+    font-weight: 700;
+    line-height: 1;
+
+    @include tab {
+      font-size: 11px;
+    }
   }
 
-  input,
-  textarea,
-  select {
-    display: block;
+  &__dd {
+    margin: 0;
+  }
+
+  &__input,
+  &__textarea,
+  &__select {
     width: 100%;
-    max-width: none;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
     padding: 12px 14px;
-    font-size: 16px;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: #fff;
+    font-size: 14px;
     box-sizing: border-box;
+    background: #fff;
+
+    @include tab {
+      font-size: 14px;
+      padding: 11px 12px;
+    }
 
     &:focus {
       outline: none;
-      border-color: #2e7d32;
+      border-color: #2f80ed;
+      box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.15);
     }
   }
 
-  textarea {
+  &__textarea {
     resize: vertical;
+    min-height: 140px;
+
+    @include tab {
+      min-height: 120px;
+    }
   }
 
-  select {
+  &__select-wrap {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid #666;
+      border-bottom: 2px solid #666;
+      transform: translateY(-50%) rotate(45deg);
+      pointer-events: none;
+    }
+  }
+
+  &__select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    background-size: 10px 6px;
-    padding-right: 40px;
+    -webkit-appearance: none;
   }
 
-  &__privacy {
-    margin: 32px 0;
+  &__check {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
 
-    label {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
-      line-height: 1.6;
-      cursor: pointer;
-    }
+  &__check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+  }
 
-    input[type="checkbox"] {
-      width: auto;
-      padding: 0;
-      border: none;
-      margin-top: 3px;
-      flex-shrink: 0;
-    }
+  &__note {
+    margin: 10px 0 0;
+    font-size: 12px;
 
     a {
       text-decoration: underline;
     }
   }
 
-  &__btn-wrap {
+  &__btns {
+    margin-top: 22px;
     text-align: center;
-    margin-top: 32px;
+
+    @include tab {
+      margin-top: 18px;
+    }
   }
 
-  &__btn {
-    display: inline-block;
-    min-width: 240px;
-    padding: 14px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background: #2e7d32;
+  &__submit {
+    width: 100%;
+    max-width: 360px;
+    padding: 14px 16px;
     border: none;
     border-radius: 999px;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-
-    &:hover {
-      opacity: 0.85;
-    }
-  }
-}
-
-/* =================================
-お知らせ
- ================================= */
-.page-information {
-
-  a {
-    text-decoration: none;
-    color: #141414;
-  }
-
-  .news-archive__tab {
-    text-align: center;
-  }
-
-  &__pager {
-    margin: 80px 0;
-    text-align: center;
-  }
-
-  .subpage__section {
-
-    @media (min-width: 1020px) {
-      width: 1020px;
-      max-width: 1020px;
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
-    }
-  }
-}
-
-/* =================================
-お知らせ　詳細
- ================================= */
-
-.single {
-
-  &__ttl {
-    border-top: $bg 24px solid;
-    text-align: center;
-    padding: 40px 0;
-    font-size: 20px;
-
-    span {
-      display: block;
-      font-size: 14px;
-      color: #ccc;
-      position: relative;
-      padding-top: 16px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 6px;
-        transform: translateX(-50%);
-        width: 70px;
-        height: 3px;
-        background: $main;
-      }
-
-
-    }
-  }
-
-  &__content {
-    max-width: 800px;
-    margin: 0 auto 80px;
-    font-size: 16px;
-    line-height: 1.8;
-
-    @include tab {
-      margin: 0 auto 60px;
-    }
-  }
-
-  &__btn {
-    margin: 0 auto 120px;
-
-    @include tab {
-      margin: 0 auto 60px;
-    }
-  }
-}
-
-/* =================================
-地域スポーツ指導者
- ================================= */
-.page-instructors {
-
-  &__btn-wrap {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 0 80px;
-  }
-
-  &__btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none !important;
-    min-height: 56px;
-    padding: 14px 24px;
-    border-radius: 999px;
-
-    background: #fff;
-    border: 2px solid #43a047; // 緑の枠
-    color: #43a047; // 文字も緑
-
-    font-weight: 700;
-    line-height: 1.3;
-    text-align: center;
-    text-decoration: none;
-
-    transition: 0.25s ease;
-
-    flex: 1 1 320px;
-    max-width: 320px;
-
-    &:hover,
-    &:focus-visible {
-      background: #ecf9ef; // うっすら緑
-      box-shadow: 0 8px 20px rgba(67, 160, 71, 0.25);
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    &:active {
-      transform: translateY(0);
-      box-shadow: none;
-    }
-  }
-
-  &__img {
-    max-width: 600px;
-    margin: 0 0 60px;
-  }
-}
-
-/* =================================
-地域スポーツ指導者リスト
- ================================= */
-
-.instructor-list {
-
-  &__content {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-
-    @include pc {
-      gap: 24px;
-    }
-
-    @include tab {
-      gap: 40px;
-    }
-  }
-
-  &__article {
-    background-color: #fff;
-    text-decoration: none !important;
-    width: calc((100% - 80px) / 3);
-    padding: 24px;
-    border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
-    @include pc {
-      width: calc((100% - 48px) / 3);
-    }
-
-    @include tab {
-      width: calc((100% - 40px) / 2);
-    }
-
-    @include sp {
-      width: 100%;
-    }
-  }
-
-  &__article-img {
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-    margin: 0 0 12px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* トリミング */
-      object-position: center;
-      /* 中央基準 */
-    }
-  }
-
-  &__article-name {
-    font-size: 17px;
-    margin: 0 0 8px 4px;
-  }
-
-  &__article-category {
-    border: #ccc 1px solid;
-    padding: 8px;
-  }
-
-  &__article-category-span {
-    display: block;
-    background-color: $main;
+    background: #2f80ed;
     color: #fff;
-    width: 70px;
-    text-align: center;
-    margin: 0 0 8px;
-  }
-
-  &__pager {
-    margin: 80px 0;
-    text-align: center;
-  }
-
-}
-
-/* =================================
-地域スポーツ指導者リスト　詳細
- ================================= */
-.instructor-list {
-
-  &__img-wrap {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-
-  }
-
-  &__img {
-    width: calc((100% - 48px) / 3);
-    aspect-ratio: 3 / 2;
-    overflow: hidden;
-    margin: 0 0 12px;
-
-    @include sp {
-      width: 100%;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* トリミング */
-      object-position: center;
-      /* 中央基準 */
-    }
-  }
-
-  &__btn {
-    margin: 0 auto;
-  }
-
-  &__ {}
-
-  &__ {}
-}
-
-/* =================================
-イベント
- ================================= */
-.event {
-
-  .event-content__item {
-    text-decoration: none;
-  }
-
-  &__pager {
-    text-align: center;
-    margin: 40px 0;
-  }
-
-  &__map-wrap {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; // 16:9
-    overflow: hidden;
-    border-radius: 12px;
-
-    iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  }
-
-  &__img {
-    max-width: 780px;
-    margin: 0 auto 40px;
-  }
-
-  &__content {
-    margin: 0 0 60px;
-
-    @include tab {
-      margin: 0 0 32px;
-    }
-  }
-
-
-  &__btn {
-    margin: 40px auto;
-  }
-
-}
-
-/* =================================
-大会情報
- ================================= */
-.tournament {
-
-  .subpage__table {
-    th:first-child {
-      width: 28%;
-    }
-
-    td:first-child {
-      text-align: center;
-    }
-
-    th:nth-child(2) {
-      width: 72%;
-      letter-spacing: normal;
-      text-align: center;
-      /* or left */
-    }
-  }
-
-  &__item {
-    margin: 0 0 60px;
-
-    @include tab {
-      margin: 0 0 24px;
-    }
-  }
-
-  &__pager {
-    margin: 40px 0;
-    text-align: center;
-  }
-}
-
-/* =================================
-施設詳細
- ================================= */
-
-.facilities-single {
-
-  .subpage__ttl {
-
-    span {
-      display: block;
-      font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-      font-size: 24px;
-      color: $main;
-
-      @include tab {
-        font-size: 14px;
-      }
-    }
-  }
-
-  &__content {
-    background-color: $bg;
-    padding: 60px 120px;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    border-radius: 24px;
-    position: relative;
-
-    @media screen and (max-width: 1200px) {
-      border-radius: 0;
-    }
-
-    @include pc {
-      padding: 60px 60px;
-    }
-
-    @include tab {
-      padding: 40px 14px;
-    }
-  }
-
-  &__content-inner {
-    background-color: #fff;
-    padding: 24px 60px 60px;
-    border-radius: 24px;
-
-    @include pc {
-      padding: 12px 40px 40px;
-    }
-
-    @include tab {
-      padding: 0 12px 40px;
-      border-radius: 12px;
-    }
-
-    &--margin {
-      margin: 0 0 60px;
-
-      @include tab {
-        margin: 0 0 40px;
-      }
-    }
-  }
-
-  &__table-wrap {
-    width: 100%;
-    overflow-x: auto;
-
-    &--no-scroll {
-      overflow-x: visible;
-    }
-  }
-
-  &__table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-
-    tr {
-      border-bottom: 1px solid #b5b5b5;
-
-      &:first-child {
-        border-top: 1px solid #b5b5b5;
-      }
-
-      /* --- SP：行をブロック化 --- */
-      @include sp {
-        display: block;
-      }
-    }
-
-    th,
-    td {
-      padding: 20px 24px;
-      font-size: 16px;
-      line-height: 1.8;
-      vertical-align: top;
-
-      /* --- tablet --- */
-      @include tab {
-        padding: 16px 18px;
-        font-size: 15px;
-        width: 100%;
-
-      }
-
-      /* --- sp --- */
-      @include sp {
-        display: block;
-        width: 100%;
-        padding: 12px 16px;
-      }
-    }
-
-    th {
-      width: 30%;
-      background: #f3f3f3;
-      text-align: left;
-
-
-
-      @include sp {
-        border-bottom: none;
-        width: 100%;
-
-      }
-    }
-
-    td {
-      width: 70%;
-      background: #fff;
-
-
-      @include sp {
-        border-top: 1px solid #ddd;
-        width: 100%;
-
-      }
-    }
-  }
-
-  &__map-wrap {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%; // 16:9
-
-    iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-    }
-  }
-
-  &__content-semicircle-top {
-    position: absolute;
-    top: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 340px;
-
-    @include tab {
-      display: none;
-    }
-  }
-
-  &__btn {
-    margin: 0 auto 120px;
-
-    @include tab {
-      margin: 0 auto 60px;
-    }
-  }
-}
-
-.photo-gallery {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-
-  @include tab {
-    gap: 18px;
-    flex-direction: column;
-  }
-
-  &__main {
-    flex: 1;
-    min-width: 0;
-  }
-
-  &__main-img {
-    width: 100%;
-    display: block;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 24px;
-
-    @include tab {
-      border-radius: 8px;
-    }
-  }
-
-  &__thumbs {
-    width: 260px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-
-    @include tab {
-      width: 100%;
-      grid-template-columns: repeat(4, 1fr); // ★ 3列が一番安定
-      gap: 8px;
-    }
-
-
-  }
-
-  &__thumb {
-    aspect-ratio: 4 / 3; // ★ 比率は枠に
-    overflow: hidden;
-    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
 
-    @include tab {
-      border-radius: 4px;
-    }
-
-    img {
-      width: 100%;
-      height: 100%; // ★ これ重要
-      object-fit: cover;
-      object-position: center bottom;
-      display: block;
-      opacity: 0.65;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    &.is-active {
-      box-shadow: 0 0 0 3px $main;
-
-      img {
-        opacity: 1;
-        transform: scale(1.02);
-      }
-    }
-
-    &:hover img {
-      opacity: 1;
-      transform: scale(1.02);
-    }
-  }
-}
-
-/* =================================
-施設一覧
- ================================= */
-
-.facilities {
-
-  &__main-visual {
-    padding: 12px 24px;
-    max-width: 1400px;
-    margin: 0 auto 12px;
-    position: relative;
-
-
-    @include tab {
-      padding: 8px;
-      margin: 0 auto 32px;
-
-    }
-  }
-
-  &__ttl {
-    padding: 20px 16px 30px;
-    text-align: center;
-    font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
-    font-weight: 800;
-    font-size: 38px;
-    color: $main;
-    line-height: 1.2;
-    margin: 0 0 40px;
-    position: relative;
-
-    @include tab {
-      font-size: 20px;
-      margin: 0 0 32px;
-      padding: 0 16px;
-
-    }
-
-    span {
-      display: block;
-      font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
-      font-size: 28px;
-      color: #d9d9d9;
-      font-family: "Noto Sans", sans-serif;
-
-      @include tab {
-        font-size: 14px;
-      }
-    }
-  }
-
-  &__content {
-    background-color: $bg;
-    padding: 60px 120px;
-    max-width: 1200px;
-    margin: 0 auto 120px;
-    border-radius: 24px;
-    position: relative;
-
-    @media screen and (max-width: 1200px) {
-      border-radius: 0;
-    }
-
-    @include pc {
-      padding: 60px 60px;
-    }
-
-    @include tab {
-      padding: 40px 14px 12px;
-      margin: 0 auto 60px;
-
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -17px;
-      transform: translateX(-50%);
-
-      width: 0;
-      height: 0;
-
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 18px solid $bg; // 下の背景色
-    }
-  }
-
-  &__search-wrap {
-    margin: 0 0 80px;
-
-    @include tab {
-      margin: 0 0 40px;
-    }
-  }
-
-  &__item-wrap {
-    display: flex;
-    gap: 16px;
-
-    @include tab {
-      flex-wrap: wrap;
-      gap: 12px;
-
-    }
-  }
-
-  &__item {
-    position: relative;
-
-    @include tab {
-      width: calc((100% - 24px) / 3);
-      margin: 0 0 40px;
-    }
-
-    // active時（緑枠＋濃い画像＋下に●）
-    &.active {
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -24px; // ●を枠の外に出す（調整OK）
-        transform: translateX(-50%);
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #18a84a;
-      }
-    }
-  }
-
-  &__article-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 80px 32px;
-    max-width: 1020px;
-    margin: 0 auto 80px;
-    padding: 0 16px;
-
-    @include sp {
-      gap: 32px;
-    }
-
-  }
-
-  &__article {
-    width: calc((100% - 64px) / 3);
-
-    @include tab {
-
-      width: calc((100% - 32px) / 2);
-    }
-
-    @include sp {
-      width: 100%;
-    }
-
-    a {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
+    transition: opacity 0.2s ease, transform 0.2s ease;
 
     &:hover {
-      .facilities__img img {
-        transform: scale(1.05);
-      }
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
 
-      .facilities__arrow img {
-        transform: translateX(4px); // ← さりげなく動かす
-      }
+    @include tab {
+      max-width: 100%;
     }
   }
 
-  &__img {
-    position: relative;
-    overflow: hidden; // ← はみ出しカット
-    border-radius: 24px;
-    aspect-ratio: 4 / 3; // ← 表示比率を固定
+  &__ {}
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // ← トリミングの肝
-      transition: transform 0.3s ease;
-    }
-  }
-
-  &__body {
-    margin-top: 12px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 0 16px;
-  }
-
-  &__name {
-    font-size: 14px;
-    line-height: 1.5;
-
-    span {
-      display: block;
-    }
-  }
-
-  &__arrow {
-    flex-shrink: 0;
-
-    img {
-      width: 28px; // ← アイコンサイズ
-      height: 28px;
-      transition: transform 0.25s ease;
-    }
-  }
-
-  &__pager {
-    text-align: center;
-    margin: 0 0 80px;
-  }
-}
-
-/* =================================
-教室
- ================================= */
-
-.page-classes {
-
-  &__item-wrap {
-    max-width: 880px;
-    gap: 60px 40px;
-    margin: 0 auto 120px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 16px;
-
-    @include sp {
-      gap: 12px;
-
-    }
-  }
-
-  &__item {
-    width: calc((100% - 40px) / 2);
-
-    @include sp {
-      width: 100%;
-    }
-  }
-
-  &__img {}
-
-  &__btn {
-    max-width: 200px;
-    margin: -20px 0 0 auto;
-  }
+  &__ {}
 
   &__ {}
 
