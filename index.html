@@ -59,13 +59,13 @@
     <nav class="site-header__lower" id="jsHeaderLower" aria-label="グローバルナビ">
       <!-- 下層ページは g-nav__itemにactiveのつけ外し-->
       <ul class="g-nav">
-        <li class="g-nav__item"><a class="g-nav__link g-nav__link--home" href="#">ホーム</a></li>
-        <li class="g-nav__item"><a class="g-nav__link" href="#">クラブについて</a></li>
-        <li class="g-nav__item"><a class="g-nav__link" href="#">ニュース</a></li>
-        <li class="g-nav__item"><a class="g-nav__link" href="#">スケジュール</a></li>
-        <li class="g-nav__item"><a class="g-nav__link" href="#">試合結果</a></li>
-        <li class="g-nav__item"><a class="g-nav__link" href="#">部員名簿</a></li>
-        <li class="g-nav__item"><a class="g-nav__link" href="#">お問い合わせ</a></li>
+        <li class="g-nav__item"><a class="g-nav__link g-nav__link--home" href="index.html">ホーム</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="about.html">クラブについて</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="news.html">ニュース</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="schedule.html">スケジュール</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="results.html">試合結果</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="player.html">部員名簿</a></li>
+        <li class="g-nav__item"><a class="g-nav__link" href="contact.html">お問い合わせ</a></li>
       </ul>
 
       <!-- SP用：ハンバーガー（CSSでSPのみ表示） -->
@@ -92,13 +92,13 @@
         <button class="drawer__close" type="button" id="jsDrawerClose" aria-label="メニューを閉じる">×</button>
       </div>
       <nav class="drawer__nav" aria-label="SPナビ">
-        <a class="drawer__link" href="#">ホーム</a>
-        <a class="drawer__link" href="#">クラブについて</a>
-        <a class="drawer__link" href="#">ニュース</a>
-        <a class="drawer__link" href="#">スケジュール</a>
-        <a class="drawer__link" href="#">試合結果</a>
-        <a class="drawer__link" href="#">部員名簿</a>
-        <a class="drawer__link" href="#">お問い合わせ</a>
+        <a class="drawer__link" href="index.html">ホーム</a>
+        <a class="drawer__link" href="about.html">クラブについて</a>
+        <a class="drawer__link" href="news.html">ニュース</a>
+        <a class="drawer__link" href="schedule.html">スケジュール</a>
+        <a class="drawer__link" href="results.html">試合結果</a>
+        <a class="drawer__link" href="player.html">部員名簿</a>
+        <a class="drawer__link" href="contact.html">お問い合わせ</a>
       </nav>
     </div>
   </div>
@@ -118,26 +118,27 @@
     </div>
 
     <section class="top-section top-about">
-      <div class="top-section__title">
-        <h2 class="top-section__title-en">About the Club</h2>
-        <p class="top-section__title-jp">クラブについて</p>
+      <div class="top-section__title fade-in-js fade-up">
+        <p class="top-section__title-en">About the Club</p>
+        <h2 class="top-section__title-jp">クラブについて</h2>
       </div>
-      <div class="top-about__main">
+      <div class="top-about__main fade-in-js fade-zoom-big">
         <img src="assets/img/top/top-about-main.png" alt="">
       </div>
       <p class="top-about__text">
         三和テクノイノベーション硬式野球クラブは2025 年3 月に周南市初の公認野球チームとして発足しました。<br>
         「野球をやりたい若い人が県外に出ていくことを防ぎたい」という強い思いが結実した、地域に根ざしたチームです。
       </p>
-      <div class="top-about__item">
+
+      <div class="top-about__item fade-in-js fade-left">
         <div class="top-about__img">
           <img src="assets/img/top/top-about01.png" alt="原田裕一">
         </div>
         <div class="top-about__content">
           <div class="top-about__item-top">
-            <h2 class="top-about__item-lead">野球を続け<br>
+            <h3 class="top-about__item-lead">野球を続け<br>
               完全燃焼できる<br>
-              環境を</h2>
+              環境を</h3>
             <p class="top-about__item-text">高校野球、大学野球のあと完全燃焼できて、自分が引退すると言う
               まで硬式野球を続けられる環境があったら、すごく周南市が盛り上
               がるんじゃないでしょうか。</p>
@@ -152,15 +153,15 @@
         </div>
       </div>
 
-      <div class="top-about__item reverse">
+      <div class="top-about__item reverse fade-in-js fade-right">
         <div class="top-about__img">
           <img src="assets/img/top/top-about02.png" alt="中野 泰造">
         </div>
         <div class="top-about__content">
           <div class="top-about__item-top">
-            <h2 class="top-about__item-lead">野球で地方を<br>
+            <h3 class="top-about__item-lead">野球で地方を<br>
               世界へ発信する<br>
-              愛されるチームに</h2>
+              愛されるチームに</h3>
             <p class="top-about__item-text">必ず地方から発信できる。日本だけじゃなく世界にできる。山口県
               周南市はその条件をクリアしている稀有な地方都市だ。</p>
           </div>
@@ -174,21 +175,21 @@
         </div>
       </div>
 
-      <a href="#" class="btn-outline">
+      <a href="about.html" class="btn-outline">
         <span class="btn-outline__text">クラブについて詳しく</span>
       </a>
     </section>
 
     <section class="top-section top-news">
-      <div class="top-section__title">
-        <h2 class="top-section__title-en">News</h2>
-        <p class="top-section__title-jp">ニュース</p>
+      <div class="top-section__title fade-in-js fade-up">
+        <p class="top-section__title-en">News</p>
+        <h2 class="top-section__title-jp">ニュース</h2>
       </div>
       <ul class="news-list top-news__content">
 
         <!-- 記事 -->
         <li class="news-list__item">
-          <a href="#" class="news-list__link">
+          <a href="single.html" class="news-list__link">
             <time class="news-list__date" datetime="2026-01-01">2026.00.00</time>
             <span class="news-list__label">試合結果</span>
             <span class="news-list__title">第 00 回社会人野球〇〇〇〇選手権大会　決勝　VS〇〇〇〇〇〇〇〇〇</span>
@@ -197,7 +198,7 @@
         <!-- 記事ここまで -->
 
         <li class="news-list__item">
-          <a href="#" class="news-list__link">
+          <a href="single.html" class="news-list__link">
             <time class="news-list__date" datetime="2026-01-01">2026.00.00</time>
             <span class="news-list__label">試合結果</span>
             <span class="news-list__title">第 00 回社会人野球〇〇〇〇選手権大会　決勝　VS〇〇〇〇〇〇〇〇〇</span>
@@ -205,7 +206,7 @@
         </li>
 
         <li class="news-list__item">
-          <a href="#" class="news-list__link">
+          <a href="single.html" class="news-list__link">
             <time class="news-list__date" datetime="2026-01-01">2026.00.00</time>
             <span class="news-list__label">試合結果</span>
             <span class="news-list__title">第 00 回社会人野球〇〇〇〇選手権大会　決勝　VS〇〇〇〇〇〇〇〇〇</span>
@@ -218,9 +219,9 @@
     </section>
 
     <section class="top-section top-schedule">
-      <div class="top-section__title">
-        <h2 class="top-section__title-en">Schedule</h2>
-        <p class="top-section__title-jp">スケジュール</p>
+      <div class="top-section__title fade-in-js fade-up">
+        <p class="top-section__title-en">Schedule</p>
+        <h2 class="top-section__title-jp">スケジュール</h2>
       </div>
       <div class="top-schedule__item-wrap">
         <!-- 記事 -->
@@ -280,9 +281,9 @@
     </section>
 
     <section class="top-section top-result">
-      <div class="top-section__title">
-        <h2 class="top-section__title-en">Result</h2>
-        <p class="top-section__title-jp">試合結果</p>
+      <div class="top-section__title fade-in-js fade-up">
+        <p class="top-section__title-en">Result</p>
+        <h2 class="top-section__title-jp">試合結果</h2>
       </div>
 
       <div class="top-result__item-wrap">
@@ -401,28 +402,28 @@
         </div>
       </div>
 
-      <a href="#" class="btn-outline">
+      <a href="results.html" class="btn-outline">
         <span class="btn-outline__text">試合結果一覧へ</span>
       </a>
     </section>
 
     <section class="top-section top-member">
-      <div class="top-section__title">
-        <h2 class="top-section__title-en">Team Member</h2>
-        <p class="top-section__title-jp">部員名簿</p>
+      <div class="top-section__title fade-in-js fade-up">
+        <p class="top-section__title-en">Team Member</p>
+        <h2 class="top-section__title-jp">部員名簿</h2>
       </div>
-      <a href="" class="top-member__img"><img src="assets/img/top/top-member-img.png" alt=""></a>
-      <div class="top-member__img-sp"><img src="assets/img/top/top-member-img-sp.png" alt=""></div>
-      <a href="" class="top-member__btn"><img src="assets/img/top/top-member-btn.png" alt="部員名簿へ"></a>
+      <a href="player.html" class="top-member__img fade-in-js fade-zoom-big"><img src="assets/img/top/top-member-img.png" alt=""></a>
+      <div class="top-member__img-sp fade-in-js fade-zoom-big"><img src="assets/img/top/top-member-img-sp.png" alt=""></div>
+      <a href="player.html" class="top-member__btn"><img src="assets/img/top/top-member-btn.png" alt="部員名簿へ"></a>
     </section>
 
     <section class="top-section top-contact">
-      <a href="" class="top-contact__img"><img src="assets/img/top/top-contact-img.png" alt=""></a>
+      <a href="contact.html" class="top-contact__img fade-in-js fade-rotate"><img src="assets/img/top/top-contact-img.png" alt=""></a>
       <div class="top-section__title sp-block">
-        <h2 class="top-section__title-en">Contact Us</h2>
-        <p class="top-section__title-jp">お問い合わせ</p>
+        <p class="top-section__title-en">Contact Us</p>
+        <h2 class="top-section__title-jp">お問い合わせ</h2>
       </div>
-      <a href="" class="top-contact__img-sp"><img src="assets/img/top/top-contact-img-sp.png" alt="お問い合わせ"></a>
+      <a href="contact.html" class="top-contact__img-sp"><img src="assets/img/top/top-contact-img-sp.png" alt="お問い合わせ"></a>
     </section>
 
     <div class="bnr-section">
@@ -448,12 +449,12 @@
       <ul class="site-footer__nav">
         <li class="site-footer__nav-item"><a class="site-footer__nav-link site-footer__nav-link--home" href="#">ホーム</a>
         </li>
-        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">クラブについて</a></li>
-        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">ニュース</a></li>
-        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">スケジュール</a></li>
-        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">試合結果</a></li>
-        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">部員名簿</a></li>
-        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">お問い合わせ</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="about.html">クラブについて</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="news.html">ニュース</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="schedule.html">スケジュール</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="results.html">試合結果</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="player.html">部員名簿</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="contact.html">お問い合わせ</a></li>
       </ul>
       <p class="site-footer__copy">周南市初公認 社会人硬式野球クラブチーム<br class="sp-block">三和テクノイノベーション All Rights Reserved.</p>
     </div>

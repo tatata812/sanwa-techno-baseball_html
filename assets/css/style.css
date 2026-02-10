@@ -630,6 +630,42 @@
 }
 
 /* =================================
+クラブについて
+ ================================= */
+.page-about {
+  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+}
+/* =================================
+スケジュール
+ ================================= */
+.page-schedule {
+  background-image: url("../img/subpage/page-schedule-top.png"), url("../img/subpage/subpage-bottom.png");
+}
+/* =================================
+試合結果
+ ================================= */
+.page-results {
+  background-image: url("../img/subpage/page-results-top.png"), url("../img/subpage/subpage-bottom.png");
+}
+/* =================================
+部員名簿
+ ================================= */
+.page-player {
+  background-image: url("../img/subpage/page-player-top.png"), url("../img/subpage/subpage-bottom.png");
+}
+/* =================================
+ニュース
+ ================================= */
+.page- {
+  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+}
+/* =================================
+ニュース詳細
+ ================================= */
+.single {
+  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+}
+/* =================================
 お問い合わせ
  ================================= */
 .page-contact {
