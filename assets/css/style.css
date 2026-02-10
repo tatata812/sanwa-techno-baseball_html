@@ -313,8 +313,249 @@
   color: #0b63c7;
 }
 /* =================================
-
+試合結果
  ================================= */
+.top-result {
+  padding: 220px 16px;
+  background: #f2f9ff;
+  clip-path: polygon(0 14%, 100% 0, 100% 86%, 0 100%);
+}
+@media (max-width: 820px) {
+  .top-result {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 40px 16px;
+  }
+}
+.top-result__item-wrap {
+  max-width: 780px;
+  margin: 80px auto;
+}
+@media (max-width: 820px) {
+  .top-result__item-wrap {
+    margin: 40px auto;
+  }
+}
+.top-result__item {
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  margin: 0 0 40px;
+  padding: 0 0 12px;
+}
+@media (max-width: 820px) {
+  .top-result__item {
+    margin: 0 0 24px;
+  }
+}
+.top-result__item:last-of-type {
+  margin: 0px;
+}
+@media (max-width: 820px) {
+  .top-result__item:last-of-type {
+    margin: 0px;
+  }
+}
+.top-result__date {
+  font-size: 22px;
+  font-weight: 700;
+  font-size: 28px;
+  padding: 4px 32px;
+}
+@media (max-width: 820px) {
+  .top-result__date {
+    font-size: 20px;
+    padding: 4px 16px;
+  }
+}
+.top-result__row {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  font-size: 16px;
+}
+@media (max-width: 820px) {
+  .top-result__row {
+    padding: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+}
+.top-result__row--gray {
+  background-color: #f6f6f6;
+}
+.top-result__row--venue {
+  position: relative;
+  margin: 0 0 12px;
+}
+.top-result__row--venue::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 0;
+  height: 1px;
+  background: #cfcfcf;
+}
+@media (max-width: 820px) {
+  .top-result__row--venue::after {
+    left: 12px;
+    right: 12px;
+  }
+}
+.top-result__row--score {
+  padding: 0 32px;
+}
+@media (max-width: 820px) {
+  .top-result__row--score {
+    margin: 0 0 12px;
+    padding: 0 16px;
+  }
+}
+.top-result__label {
+  width: 160px;
+}
+@media (max-width: 820px) {
+  .top-result__label {
+    width: 100%;
+  }
+}
+.top-result__name {
+  color: #0b63c7;
+  font-size: 22px;
+  font-weight: 700;
+}
+.top-result__small {
+  font-size: 17px;
+}
+.top-result__blue {
+  color: #0b63c7;
+}
+.top-result__score {
+  margin-left: auto;
+  font-size: 24px;
+  padding: 0 50px 0 0;
+}
+.top-result__score-item .red {
+  color: #f15a24;
+}
+.top-result__score-span {
+  margin: 0 6px;
+}
+.top-result__score-record {
+  position: relative;
+}
+.top-result__score-record::before {
+  content: url(../img/top/win.png);
+  position: absolute;
+  top: -12px;
+  right: -56px;
+  transform: scale(0.5);
+}
+.top-result__score-record.loss::before {
+  content: url(../img/top/loss.png);
+}
+/* =================================
+部員名簿
+ ================================= */
+.top-member {
+  padding: 60px 16px;
+}
+@media (max-width: 820px) {
+  .top-member {
+    padding: 40px 16px;
+  }
+}
+.top-member__img {
+  display: block;
+  max-width: 920px;
+  margin: 80px auto;
+}
+@media (max-width: 820px) {
+  .top-member__img {
+    display: none;
+  }
+}
+.top-member__img-sp {
+  display: none;
+}
+@media (max-width: 820px) {
+  .top-member__img-sp {
+    display: block;
+    margin: 40px auto;
+  }
+}
+.top-member__btn {
+  display: none;
+}
+@media (max-width: 820px) {
+  .top-member__btn {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+/* =================================
+お問い合わせ
+ ================================= */
+.top-contact {
+  padding: 160px 16px;
+  background: #f2f9ff;
+  clip-path: polygon(0 14%, 100% 0, 100% 86%, 0 100%);
+}
+@media (max-width: 820px) {
+  .top-contact {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 40px 16px;
+  }
+}
+.top-contact__img {
+  display: block;
+  max-width: 660px;
+  margin: 80px auto;
+}
+@media (max-width: 820px) {
+  .top-contact__img {
+    display: none;
+  }
+}
+.top-contact__img-sp {
+  display: none;
+}
+@media (max-width: 820px) {
+  .top-contact__img-sp {
+    display: block;
+    max-width: 280px;
+    margin: 40px auto;
+  }
+}
+
+/* =================================
+バナー
+ ================================= */
+.bnr-section {
+  padding: 80px 16px;
+  max-width: 660px;
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+}
+@media (max-width: 820px) {
+  .bnr-section {
+    padding: 40px 16px 60px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.bnr-section__item {
+  width: calc((100% - 40px) / 2);
+}
+@media (max-width: 820px) {
+  .bnr-section__item {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 /* 下層ページスタイルシート */
 /* =================================
 下層ページ共通
@@ -1950,6 +2191,10 @@ a[href$=".pdf"].is-icon::after {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.8;
   color: #141414;
@@ -2049,7 +2294,7 @@ dt {
 }
 
 /* =========================
-  site-header
+  ヘッダー
 ========================= */
 .site-header {
   /* 上部：最初は隠す（fixedだけど非表示状態） */
@@ -2110,6 +2355,16 @@ dt {
   text-decoration: none;
   color: #222;
   font-size: 14px;
+}
+.g-nav__link--home {
+  position: relative;
+}
+.g-nav__link--home::before {
+  content: url(../img/top/home-icon.png);
+  position: absolute;
+  top: -12px;
+  left: -36px;
+  transform: scale(0.4);
 }
 @media (max-width: 820px) {
   .g-nav {
@@ -2187,6 +2442,7 @@ dt {
   justify-content: space-between;
   padding: 16px;
   border-bottom: 1px solid #eee;
+  gap: 40px;
 }
 .drawer__title {
   font-weight: 700;
@@ -2246,65 +2502,96 @@ body.is-stuck .site-header__spacer {
 }
 
 /* =================================
-footer
+フッター
  ================================= */
 .site-footer {
-  background: #f7f7f7;
-  margin-top: 80px;
-  /* ロゴ */
-  /* ナビ */
-  /* 下部 */
+  padding: 12px 0;
+  position: relative;
+}
+@media (max-width: 820px) {
+  .site-footer {
+    padding: 12px 0 0;
+  }
 }
 .site-footer__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 48px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-@media (max-width: 820px) {
-  .site-footer__inner {
-    flex-direction: column;
-    gap: 32px;
-  }
+  padding: 0 16px;
 }
 .site-footer__logo {
-  font-size: 18px;
-  font-weight: 700;
-}
-.site-footer__logo a {
-  color: #222;
-  text-decoration: none;
-}
-.site-footer__nav-list {
-  display: flex;
-  gap: 32px;
+  max-width: 820px;
+  margin: 60px auto 40px;
+  display: block;
 }
 @media (max-width: 820px) {
-  .site-footer__nav-list {
-    flex-direction: column;
-    gap: 16px;
+  .site-footer__logo {
+    margin: 12px auto 32px;
   }
 }
-.site-footer__nav-list a {
-  color: #222;
+.site-footer__sns-wrap {
+  max-width: 120px;
+  margin: 0 auto 40px;
+  display: flex;
+  gap: 24px;
+}
+@media (max-width: 820px) {
+  .site-footer__sns-wrap {
+    margin: 0 auto 24px;
+  }
+}
+.site-footer__nav {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin: 0 0 12px;
+}
+@media (max-width: 820px) {
+  .site-footer__nav {
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 24px;
+    align-items: center;
+  }
+}
+.site-footer__nav-link {
   text-decoration: none;
-  font-weight: 600;
+  color: #222;
+  font-size: 14px;
 }
-.site-footer__nav-list a:hover {
-  opacity: 0.7;
+.site-footer__nav-link--home {
+  position: relative;
+  margin: 0 0 0 24px;
 }
-.site-footer__bottom {
-  border-top: 1px solid #e5e5e5;
-  padding: 16px 24px;
+.site-footer__nav-link--home::before {
+  content: url(../img/top/home-icon.png);
+  position: absolute;
+  top: -12px;
+  left: -36px;
+  transform: scale(0.4);
 }
-.site-footer__copyright {
+.site-footer__copy {
+  font-size: 14px;
+  color: #8ec6ff;
   text-align: center;
-  font-size: 12px;
-  color: #666;
+  margin: 0 0 40px;
 }
-
+@media (max-width: 820px) {
+  .site-footer__copy {
+    font-size: 11px;
+    margin: 0 0 12px;
+  }
+}
+.site-footer__go-top {
+  position: absolute;
+  width: 100px;
+  top: -40px;
+  right: 40px;
+}
+@media (max-width: 820px) {
+  .site-footer__go-top {
+    width: 60px;
+    top: -20px;
+    right: 20px;
+  }
+}
 /* =====================================================
   Scroll Fade-in Animation
   ・JSで .action が付与されると表示される

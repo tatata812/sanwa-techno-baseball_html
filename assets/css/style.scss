@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.8;
   color: #141414;
@@ -118,7 +122,7 @@ dt {
 
 
 /* =========================
-  site-header
+  ヘッダー
 ========================= */
 .site-header {
 
@@ -189,6 +193,18 @@ dt {
     text-decoration: none;
     color: #222;
     font-size: 14px;
+
+    &--home {
+      position: relative;
+
+      &::before {
+        content: url(../img/top/home-icon.png);
+        position: absolute;
+        top: -12px;
+        left: -36px;
+        transform: scale(0.4);
+      }
+    }
   }
 
   @include tab {
@@ -277,6 +293,7 @@ dt {
     justify-content: space-between;
     padding: 16px;
     border-bottom: 1px solid #eee;
+    gap: 40px;
   }
 
   &__title {
@@ -348,70 +365,123 @@ body.is-stuck {
 
 
 /* =================================
-footer
+フッター
  ================================= */
 
 .site-footer {
-  background: #f7f7f7;
-  margin-top: 80px;
+  padding: 12px 0;
+  position: relative;
+
+  @include tab{
+  padding: 12px 0 0;
+  }
 
   &__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 48px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    padding: 0 16px;
+  }
+
+  &__logo {
+    max-width: 820px;
+    margin: 60px auto 40px;
+    display: block;
 
     @include tab {
-      flex-direction: column;
-      gap: 32px;
+      margin: 12px auto 32px;
     }
   }
 
-  /* ロゴ */
-  &__logo {
-    font-size: 18px;
-    font-weight: 700;
+  &__sns-wrap {
+    max-width: 120px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 24px;
 
-    a {
-      color: #222;
-      text-decoration: none;
+    @include tab {
+      margin: 0 auto 24px;
     }
   }
 
-  /* ナビ */
-  &__nav-list {
+  &__nav {
     display: flex;
     gap: 32px;
+    justify-content: center;
+    margin: 0 0 12px;
 
     @include tab {
       flex-direction: column;
-      gap: 16px;
+      gap: 8px;
+      margin: 0 0 24px;
+      align-items: center;
     }
+  }
 
-    a {
-      color: #222;
-      text-decoration: none;
-      font-weight: 600;
 
-      &:hover {
-        opacity: 0.7;
+  &__nav-link {
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+
+    &--home {
+      position: relative;
+      margin: 0 0 0 24px;
+
+      &::before {
+        content: url(../img/top/home-icon.png);
+        position: absolute;
+        top: -12px;
+        left: -36px;
+        transform: scale(0.4);
       }
     }
   }
 
-  /* 下部 */
-  &__bottom {
-    border-top: 1px solid #e5e5e5;
-    padding: 16px 24px;
+
+
+  &__copy {
+    font-size: 14px;
+    color: #8ec6ff;
+    text-align: center;
+    margin: 0 0 40px;
+
+    @include tab {
+      font-size: 11px;
+      margin: 0 0 12px;
+
+    }
   }
 
-  &__copyright {
-    text-align: center;
-    font-size: 12px;
-    color: #666;
+  &__go-top {
+    position: absolute;
+    width: 100px;
+    top: -40px;
+    right: 40px;
+
+    @include tab {
+      width: 60px;
+      top: -20px;
+      right: 20px;
+
+    }
   }
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
+  &__ {}
+
 }
 
 

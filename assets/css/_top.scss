@@ -265,7 +265,6 @@
   @include tab {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     padding: 40px 16px;
-
   }
 
 
@@ -411,10 +410,164 @@
 }
 
 /* =================================
-
+試合結果
  ================================= */
 
-.aaa {
+.top-result {
+
+  padding: 220px 16px;
+  background: #f2f9ff;
+  clip-path: polygon(0 14%, 100% 0, 100% 86%, 0 100%);
+
+  @include tab {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 40px 16px;
+  }
+
+  &__item-wrap {
+    max-width: 780px;
+    margin: 80px auto;
+
+    @include tab {
+      margin: 40px auto;
+    }
+  }
+
+  &__item {
+    border: 1px solid #cfcfcf;
+    background: #fff;
+    margin: 0 0 40px;
+    padding: 0 0 12px;
+
+    @include tab {
+      margin: 0 0 24px;
+    }
+
+    &:last-of-type {
+      margin: 0px;
+
+      @include tab {
+        margin: 0px;
+      }
+    }
+  }
+
+  &__date {
+    font-size: 22px;
+    font-weight: 700;
+    font-size: 28px;
+    padding: 4px 32px;
+
+    @include tab {
+      font-size: 20px;
+      padding: 4px 16px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    padding: 12px 32px;
+    font-size: 16px;
+
+    @include tab {
+      padding: 16px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    &--gray {
+      background-color: #f6f6f6;
+    }
+
+    &--venue {
+      position: relative;
+      margin: 0 0 12px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 32px;
+        right: 32px;
+        bottom: 0;
+        height: 1px;
+        background: #cfcfcf;
+
+        @include tab {
+          left: 12px;
+          right: 12px;
+        }
+      }
+    }
+
+    &--score {
+      padding: 0 32px;
+
+      @include tab {
+        margin: 0 0 12px;
+        padding: 0 16px;
+
+      }
+    }
+  }
+
+  &__label {
+    width: 160px;
+
+    @include tab {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    color: #0b63c7;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  &__small {
+    font-size: 17px;
+  }
+
+  &__blue {
+    color: #0b63c7;
+  }
+
+
+  &__score {
+    margin-left: auto;
+    font-size: 24px;
+    padding: 0 50px 0 0;
+  }
+
+  &__score-item {
+
+    .red {
+      color: #f15a24;
+    }
+  }
+
+  &__score-span {
+    margin: 0 6px;
+  }
+
+  &__score-record {
+    position: relative;
+
+    &::before {
+      content: url(../img/top/win.png);
+      position: absolute;
+      top: -12px;
+      right: -56px;
+      transform: scale(0.5);
+    }
+
+    &.loss {
+      &::before {
+        content: url(../img/top/loss.png);
+      }
+    }
+  }
 
   &__ {}
 
@@ -442,13 +595,112 @@
 
   &__ {}
 
-  &__ {}
 
-  &__ {}
+}
 
-  &__ {}
+/* =================================
+部員名簿
+ ================================= */
 
-  &__ {}
+.top-member {
+  padding: 60px 16px;
+
+  @include tab {
+    padding: 40px 16px;
+  }
+
+  &__img {
+    display: block;
+    max-width: 920px;
+    margin: 80px auto;
+
+    @include tab {
+      display: none;
+    }
+  }
+
+  &__img-sp {
+    display: none;
+
+    @include tab {
+      display: block;
+      margin: 40px auto;
+    }
+  }
+
+  &__btn {
+    display: none;
 
 
+    @include tab {
+      display: block;
+      max-width: 280px;
+      margin: 0 auto;
+
+    }
+  }
+
+}
+
+/* =================================
+お問い合わせ
+ ================================= */
+
+.top-contact {
+
+  padding: 160px 16px;
+  background: #f2f9ff;
+  clip-path: polygon(0 14%, 100% 0, 100% 86%, 0 100%);
+
+  @include tab {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 40px 16px;
+  }
+
+  &__img {
+    display: block;
+    max-width: 660px;
+    margin: 80px auto;
+
+    @include tab {
+      display: none;
+    }
+  }
+
+  &__img-sp {
+    display: none;
+
+    @include tab {
+      display: block;
+      max-width: 280px;
+      margin: 40px auto;
+    }
+  }
+}
+
+/* =================================
+バナー
+ ================================= */
+
+.bnr-section {
+  padding: 80px 16px;
+  max-width: 660px;
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+
+  @include tab{
+  padding: 40px 16px 60px;
+  flex-direction: column;
+  align-items: center;
+  }
+
+  &__item {
+    width: calc((100% - 40px) /2);
+
+    @include tab{
+    width: 100%;
+    max-width: 320px;
+    }
+  }
 }

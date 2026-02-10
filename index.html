@@ -58,7 +58,7 @@
     <nav class="site-header__lower" id="jsHeaderLower" aria-label="グローバルナビ">
       <!-- PC用ナビ -->
       <ul class="g-nav">
-        <li class="g-nav__item"><a class="g-nav__link" href="#">ホーム</a></li>
+        <li class="g-nav__item"><a class="g-nav__link g-nav__link--home" href="#">ホーム</a></li>
         <li class="g-nav__item"><a class="g-nav__link" href="#">クラブについて</a></li>
         <li class="g-nav__item"><a class="g-nav__link" href="#">ニュース</a></li>
         <li class="g-nav__item"><a class="g-nav__link" href="#">スケジュール</a></li>
@@ -87,16 +87,21 @@
 
     <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="メニュー">
       <div class="drawer__header">
-        <span class="drawer__title">MENU</span>
+        <a href="index.html" class="drawer__title"><img src="assets/img/top/footer-logo.png" alt=""></a>
         <button class="drawer__close" type="button" id="jsDrawerClose" aria-label="メニューを閉じる">×</button>
       </div>
 
       <nav class="drawer__nav" aria-label="SPナビ">
-        <a class="drawer__link" href="#">メニュー1</a>
-        <a class="drawer__link" href="#">メニュー2</a>
-        <a class="drawer__link" href="#">メニュー3</a>
-        <div class="drawer__divider" aria-hidden="true"></div>
+        <a class="drawer__link" href="#">ホーム</a>
+        <a class="drawer__link" href="#">クラブについて</a>
+        <a class="drawer__link" href="#">ニュース</a>
+        <a class="drawer__link" href="#">スケジュール</a>
+        <a class="drawer__link" href="#">試合結果</a>
+        <a class="drawer__link" href="#">部員名簿</a>
         <a class="drawer__link" href="#">お問い合わせ</a>
+
+
+
       </nav>
     </div>
   </div>
@@ -223,7 +228,6 @@
         <p class="top-section__title-jp">スケジュール</p>
       </div>
       <div class="top-schedule__item-wrap">
-
         <div class="top-schedule__item">
           <div class="top-schedule__date">
             2026<span class="top-schedule__small">年</span> 4<span class="top-schedule__small">月</span><span
@@ -286,7 +290,155 @@
         <h2 class="top-section__title-en">Result</h2>
         <p class="top-section__title-jp">試合結果</p>
       </div>
+
+      <div class="top-result__item-wrap">
+        <div class="top-result__item">
+          <div class="top-result__date">
+            2026<span class="top-result__small">年</span> 4<span class="top-result__small">月</span><span
+              class="top-result__blue">12<span class="top-result__small">日</span></span><span class="top-result__small">
+              (日)</span>
+          </div>
+          <div class="top-result__row top-result__row--gray">
+            <div class="top-result__label">試合／大会名称</div>
+            <div class="top-result__content top-result__name">第00 回社会人野球○○○○選手権大会</div>
+          </div>
+
+          <div class="top-result__row top-result__row--venue">
+            <div class="top-result__label">場所</div>
+            <div class="top-result__content">〇〇〇〇球場</div>
+          </div>
+
+          <div class="top-result__row top-result__row--score ">
+            <div class="top-result__label">1回戦</div>
+            <div class="top-result__content">○○○○○○○○硬式野球部（先攻）</div>
+            <div class="top-result__score">
+              <!-- class　redがつけば赤になる -->
+              <div class="top-result__score-item">
+                <span class="top-result__score-span">4</span>-<span class="top-result__score-span red">5</span>
+                <!-- class　lossがつけば✕になる -->
+                <span class="top-result__score-record"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-result__row top-result__row--score ">
+            <div class="top-result__label">2回戦</div>
+            <div class="top-result__content">○○○○○○○○ベースボールクラブ（後攻）</div>
+            <div class="top-result__score">
+              <!-- class　redがつけば赤になる -->
+              <div class="top-result__score-item">
+                <span class="top-result__score-span red">8</span>-<span class="top-result__score-span">9</span>
+                <!-- class　lossがつけば✕になる -->
+                <span class="top-result__score-record loss"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-result__row top-result__row--score ">
+            <div class="top-result__label">準決勝</div>
+            <div class="top-result__content">○○○○○○○○野球部（先攻）</div>
+            <div class="top-result__score">
+              <!-- class　redがつけば赤になる -->
+              <div class="top-result__score-item">
+                <span class="top-result__score-span red">4</span>-<span class="top-result__score-span red">5</span>
+                <!-- class　lossがつけば✕になる -->
+                <span class="top-result__score-record"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-result__item-wrap">
+        <div class="top-result__item">
+          <div class="top-result__date">
+            2026<span class="top-result__small">年</span> 4<span class="top-result__small">月</span><span
+              class="top-result__blue">12<span class="top-result__small">日</span></span><span class="top-result__small">
+              (日)</span>
+          </div>
+          <div class="top-result__row top-result__row--gray">
+            <div class="top-result__label">試合／大会名称</div>
+            <div class="top-result__content top-result__name">第00 回社会人野球○○○○選手権大会</div>
+          </div>
+
+          <div class="top-result__row top-result__row--venue">
+            <div class="top-result__label">場所</div>
+            <div class="top-result__content">〇〇〇〇球場</div>
+          </div>
+
+          <div class="top-result__row top-result__row--score ">
+            <div class="top-result__label">1回戦</div>
+            <div class="top-result__content">○○○○○○○○硬式野球部（先攻）</div>
+            <div class="top-result__score">
+              <!-- class　redがつけば赤になる -->
+              <div class="top-result__score-item">
+                <span class="top-result__score-span">4</span>-<span class="top-result__score-span red">5</span>
+                <!-- class　lossがつけば✕になる -->
+                <span class="top-result__score-record"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-result__row top-result__row--score ">
+            <div class="top-result__label">2回戦</div>
+            <div class="top-result__content">○○○○○○○○ベースボールクラブ（後攻）</div>
+            <div class="top-result__score">
+              <!-- class　redがつけば赤になる -->
+              <div class="top-result__score-item">
+                <span class="top-result__score-span red">8</span>-<span class="top-result__score-span">9</span>
+                <!-- class　lossがつけば✕になる -->
+                <span class="top-result__score-record loss"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-result__row top-result__row--score ">
+            <div class="top-result__label">準決勝</div>
+            <div class="top-result__content">○○○○○○○○野球部（先攻）</div>
+            <div class="top-result__score">
+              <!-- class　redがつけば赤になる -->
+              <div class="top-result__score-item">
+                <span class="top-result__score-span red">4</span>-<span class="top-result__score-span red">5</span>
+                <!-- class　lossがつけば✕になる -->
+                <span class="top-result__score-record"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="btn-outline">
+        <span class="btn-outline__text">試合結果一覧へ</span>
+      </a>
     </section>
+
+    <section class="top-section top-member">
+      <div class="top-section__title">
+        <h2 class="top-section__title-en">Team Member</h2>
+        <p class="top-section__title-jp">部員名簿</p>
+      </div>
+      <a href="" class="top-member__img"><img src="assets/img/top/top-member-img.png" alt=""></a>
+
+      <div class="top-member__img-sp"><img src="assets/img/top/top-member-img-sp.png" alt=""></div>
+      <a href="" class="top-member__btn"><img src="assets/img/top/top-member-btn.png" alt="部員名簿へ"></a>
+    </section>
+
+    <section class="top-section top-contact">
+      <a href="" class="top-contact__img"><img src="assets/img/top/top-contact-img.png" alt=""></a>
+      <div class="top-section__title sp-block">
+        <h2 class="top-section__title-en">Contact Us</h2>
+        <p class="top-section__title-jp">お問い合わせ</p>
+      </div>
+      <a href="" class="top-contact__img-sp"><img src="assets/img/top/top-contact-img-sp.png" alt="お問い合わせ"></a>
+    </section>
+
+    <div class="bnr-section">
+      <a href="https://www.city.shunan.lg.jp/" target="_blank" rel="noopener" class="bnr-section__item"><img
+          src="assets/img/top/bnr-section01.png" alt="周南市"></a>
+      <a href="" target="_blank" rel="noopener" class="bnr-section__item"><img src="assets/img/top/bnr-section02.png"
+          alt="三和テクノイノベーション株式会社"></a>
+
+    </div>
 
   </main>
 
@@ -294,29 +446,33 @@
   <!--main end-->
 
   <footer class="site-footer">
+    <div class="site-footer__line">
+      <img src="assets/img/top/footer-line-top.png" alt="">
+    </div>
     <div class="site-footer__inner">
-      <!-- フッターロゴ -->
-      <div class="site-footer__logo">
-        <a href="/">Site Title</a>
+      <a href="" class="site-footer__logo"><img src="assets/img/top/footer-logo.png" alt=""></a>
+      <div class="site-footer__sns-wrap">
+        <a href="" class="site-footer__sns"><img src="assets/img/top/footer-insta.png" alt="Instagram"></a>
+        <a href="" class="site-footer__sns"><img src="assets/img/top/footer-x.png" alt="X"></a>
       </div>
-
-      <!-- フッターナビ -->
-      <nav class="site-footer__nav">
-        <ul class="site-footer__nav-list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+      <ul class="site-footer__nav">
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link site-footer__nav-link--home" href="#">ホーム</a>
+        </li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">クラブについて</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">ニュース</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">スケジュール</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">試合結果</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">部員名簿</a></li>
+        <li class="site-footer__nav-item"><a class="site-footer__nav-link" href="#">お問い合わせ</a></li>
+      </ul>
+      <p class="site-footer__copy">周南市初公認 社会人硬式野球クラブチーム<br class="sp-block">三和テクノイノベーション All Rights Reserved.</p>
     </div>
-
-    <!-- コピーライト -->
-    <div class="site-footer__bottom">
-      <p class="site-footer__copyright">
-        © 2026 Site Title
-      </p>
+    <div class="site-footer__line">
+      <img src="assets/img/top/footer-line-bottom.png" alt="">
     </div>
+    <a href="#" class="site-footer__go-top">
+      <img src="assets/img/top/go-top.png" alt="topへ">
+    </a>
   </footer>
   <script src="assets/js/main.js"></script>
 </body>
