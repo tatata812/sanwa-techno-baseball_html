@@ -2947,7 +2947,7 @@ body.is-stuck .site-header__spacer {
   display: block;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
+  max-width: 240px;
   padding: 12px 0 12px 12px;
   border: 2px solid #222;
   background: #fff;
@@ -2972,6 +2972,7 @@ body.is-stuck .site-header__spacer {
   border-top: 4px solid #d0d0d0;
   border-right: 4px solid #d0d0d0;
   transform: translateY(-50%) rotate(45deg);
+  transition: right 0.3s ease;
 }
 .btn-outline:hover {
   background: #fafafa;

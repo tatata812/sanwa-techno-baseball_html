@@ -361,9 +361,6 @@ body.is-stuck {
   }
 }
 
-
-
-
 /* =================================
 フッター
  ================================= */
@@ -372,8 +369,8 @@ body.is-stuck {
   padding: 12px 0;
   position: relative;
 
-  @include tab{
-  padding: 12px 0 0;
+  @include tab {
+    padding: 12px 0 0;
   }
 
   &__inner {
@@ -415,7 +412,6 @@ body.is-stuck {
     }
   }
 
-
   &__nav-link {
     text-decoration: none;
     color: #222;
@@ -434,8 +430,6 @@ body.is-stuck {
       }
     }
   }
-
-
 
   &__copy {
     font-size: 14px;
@@ -894,7 +888,7 @@ body.is-stuck {
   display: block;
   align-items: center;
   justify-content: center;
-  max-width: 280px;
+  max-width: 240px;
   padding: 12px 0 12px 12px;
   border: 2px solid #222;
   background: #fff;
@@ -920,6 +914,7 @@ body.is-stuck {
     border-top: 4px solid #d0d0d0;
     border-right: 4px solid #d0d0d0;
     transform: translateY(-50%) rotate(45deg);
+    transition: right 0.3s ease;
   }
 
   &:hover {
