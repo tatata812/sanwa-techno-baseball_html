@@ -22,6 +22,10 @@
     padding: 32px 16px 100px;
   }
 
+  &.single-results {
+    background-color: #fff;
+  }
+
   &__content {
     max-width: 880px;
     margin: 0 auto;
@@ -78,6 +82,27 @@
     color: #fff;
     text-align: center;
     font-size: 14px;
+  }
+
+  &__main-title {
+    font-size: 24px;
+    color: #6a6a6a;
+    font-weight: 900;
+    margin: 0 0 -50px;
+
+    @include tab {
+      margin: 0 0 -20px;
+    }
+  }
+
+  &__pager {
+    margin: 80px 0 40px;
+    padding: 0 16px;
+    text-align: center;
+
+    @include tab {
+      margin: 40px 0 24px;
+    }
   }
 }
 
@@ -150,7 +175,7 @@
 }
 
 /* =================================
-試合結果
+スケジュール
  ================================= */
 
 .page-results {
@@ -159,11 +184,224 @@
     url("../img/subpage/subpage-bottom.png");
 
 
-  &__ {}
+}
 
-  &__ {}
+/* =================================
+試合結果詳細
+ ================================= */
 
-  &__ {}
+.single-results {
+  background-image:
+    url("../img/subpage/single-results-top.png"),
+    url("../img/subpage/subpage-bottom.png");
+  background-color: #fff;
+  padding: 60px 16px 120px;
+
+  @include tab {
+    padding: 32px 16px 40px;
+  }
+
+
+  &__title-wrap {
+    max-width: 800px;
+    margin: 0 auto 120px;
+
+    @include tab {
+      margin: 0 auto 60px;
+    }
+
+  }
+
+  &__title-date {
+    color: #1e1e1e;
+    font-size: 14px;
+    margin: 0 0 12px;
+  }
+
+  &__title {
+    color: #1e1e1e;
+    font-size: 22px;
+  }
+
+  &__content {
+    max-width: 840px;
+    margin: 0 auto 80px;
+    padding: 0 16px;
+
+    @include tab {
+      margin: 0 auto 40px;
+    }
+  }
+
+  &__section-ttl {
+    color: #2f80ed;
+    font-size: 20px;
+    margin: 0 0 16px;
+
+    &--red {
+      color: #e53935;
+    }
+  }
+
+  &__list {
+
+    &--margin {
+      margin: 0 0 80px;
+
+      @include tab {
+        margin: 0 0 40px;
+      }
+    }
+  }
+
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    padding: 4px 0;
+
+    @include tab {
+      flex-wrap: wrap;
+      padding: 4px 0;
+    }
+  }
+
+  &__dt {
+    flex: 0 0 160px;
+    font-weight: bold;
+
+    @include tab {
+      flex: 0 0 100%;
+    }
+  }
+
+  &__dd {
+    flex: 1 1 auto;
+    margin: 0;
+    padding-left: 32px;
+    border-left: 1px solid #cfcfcf;
+
+    @include tab {
+      flex: 0 0 100%;
+      padding-left: 0;
+      border-left: none;
+    }
+  }
+
+
+
+  // 試合結果
+  &__game {
+    background: #eaf3fb;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 0 -40px 40px -40px;
+
+    @include pc {
+      margin: 0 0 40px;
+    }
+
+    @include tab {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding: 20px 12px;
+      border-radius: 16px;
+    }
+  }
+
+  &__score-item {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+    .red {
+      color: #f15a24;
+    }
+  }
+
+  &__score-span {
+    margin: 0 6px;
+  }
+
+  &__score-record {
+    margin-left: 12px;
+
+    img {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__table-wrap {
+    margin-top: 24px;
+    overflow-x: auto;
+
+    @include tab {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+
+    @include tab {
+      min-width: 700px;
+    }
+
+    th,
+    td {
+      border: 1px solid #cfcfcf;
+      padding: 10px;
+      white-space: nowrap;
+    }
+
+    thead th {
+      background: #f4f4f4;
+      color: #8c8b8b;
+      text-align: center;
+    }
+
+    thead th:first-child,
+    tbody th {
+      width: 260px;
+    }
+
+    tbody th:first-child {
+      background: #fff;
+      text-align: left;
+      padding: 10px 16px;
+    }
+
+    thead th:last-child,
+    tbody td:last-child {
+      width: 64px;
+      font-weight: 600;
+    }
+
+    tbody td {
+      background: #fff;
+    }
+
+    @include tab {
+
+      thead th:first-child,
+      tbody th {
+        width: 180px;
+      }
+
+      thead th:last-child,
+      tbody td:last-child {
+        width: 56px;
+      }
+    }
+  }
+
 
   &__ {}
 
@@ -221,15 +459,122 @@
 ニュース
  ================================= */
 
-.page- {
+.page-news {
   background-image:
     url("../img/subpage/page-news-top.png"),
     url("../img/subpage/subpage-bottom.png");
 
 
-  &__ {}
+  &__head {
+    margin-bottom: 40px;
+  }
 
-  &__ {}
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @include tab {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+
+  &__period {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include tab {
+      width: 100%;
+    }
+  }
+
+  &__period-label {
+    font-size: 32px;
+    font-weight: 700;
+    color: #777;
+
+    @include tab {
+      font-size: 26px;
+    }
+  }
+
+  &__select-wrap {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #555;
+      pointer-events: none;
+    }
+
+    @include tab {
+      margin-left: auto;
+    }
+  }
+
+  &__select {
+    appearance: none;
+    padding: 8px 32px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  &__divider {
+    background: #1e6de0;
+    height: 70px;
+    width: 2px;
+
+    @include tab {
+      display: none;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 16px;
+
+    @include tab {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__tab {
+    width:100px;
+    padding: 4px 0;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &.is-active {
+      background: linear-gradient(90deg, #050b7a, #000f9f);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    @include tab {
+      flex: 1 1 calc(50% - 8px);
+      min-width: auto;
+    }
+  }
 
   &__ {}
 
