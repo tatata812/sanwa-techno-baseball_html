@@ -432,7 +432,10 @@
 .top-result__score {
   margin-left: auto;
   font-size: 24px;
-  padding: 0 50px 0 0;
+}
+.top-result__score-item {
+  display: flex;
+  align-items: center;
 }
 .top-result__score-item .red {
   color: #f15a24;
@@ -441,19 +444,14 @@
   margin: 0 6px;
 }
 .top-result__score-record {
-  position: relative;
+  margin-left: 12px;
 }
-.top-result__score-record::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  right: -45px;
+.top-result__score-record img {
   width: 25px;
   height: 25px;
-  background: url("../img/top/win.png") no-repeat center/contain;
-}
-.top-result__score-record.loss::before {
-  background: url("../img/top/loss.png") no-repeat center/contain;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
 }
 /* =================================
 部員名簿
