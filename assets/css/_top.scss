@@ -8,7 +8,7 @@
  ================================= */
 
 .top-section {
-  
+
   &__title {
     text-align: center;
   }
@@ -556,16 +556,19 @@
     position: relative;
 
     &::before {
-      content: url(../img/top/win.png);
+      content: "";
       position: absolute;
-      top: -12px;
-      right: -56px;
-      transform: scale(0.5);
+     top: 3px;
+    right: -45px;
+      width: 25px; 
+      height: 25px;
+
+      background: url("../img/top/win.png") no-repeat center / contain;
     }
 
     &.loss {
       &::before {
-        content: url(../img/top/loss.png);
+      background: url("../img/top/loss.png") no-repeat center / contain;
       }
     }
   }
@@ -690,18 +693,18 @@
   gap: 40px;
   margin: 0 auto;
 
-  @include tab{
-  padding: 40px 16px 60px;
-  flex-direction: column;
-  align-items: center;
+  @include tab {
+    padding: 40px 16px 60px;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__item {
     width: calc((100% - 40px) /2);
 
-    @include tab{
-    width: 100%;
-    max-width: 320px;
+    @include tab {
+      width: 100%;
+      max-width: 320px;
     }
   }
 }

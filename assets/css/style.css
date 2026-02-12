@@ -444,14 +444,16 @@
   position: relative;
 }
 .top-result__score-record::before {
-  content: url(../img/top/win.png);
+  content: "";
   position: absolute;
-  top: -12px;
-  right: -56px;
-  transform: scale(0.5);
+  top: 3px;
+  right: -45px;
+  width: 25px;
+  height: 25px;
+  background: url("../img/top/win.png") no-repeat center/contain;
 }
 .top-result__score-record.loss::before {
-  content: url(../img/top/loss.png);
+  background: url("../img/top/loss.png") no-repeat center/contain;
 }
 /* =================================
 部員名簿
