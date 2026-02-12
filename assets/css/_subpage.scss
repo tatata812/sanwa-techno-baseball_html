@@ -111,20 +111,20 @@
 
 .page-about {
   background-image:
-    url("../img/subpage/page-news-top.png"),
+    url("../img/subpage/page-about-top.png"),
     url("../img/subpage/subpage-bottom.png");
   background-color: #fff;
   padding: 32px 0 100px;
 
   &__logo {
-    max-width: 540px;
+    max-width: 640px;
     margin: 40px auto 80px;
     padding: 0 24px;
   }
 
   &__desc-wrap {
     display: flex;
-    max-width: 800px;
+    max-width: 860px;
     margin: 0 auto 80px;
     gap: 40px;
     align-items: center;
@@ -248,12 +248,7 @@
   }
 
   &__bnr-title-jp {
-    font-size: 16px;
-    margin: 0;
-
-    @include tab {
-      font-size: 12px;
-    }
+    font-size: 12px;
   }
 
   &__bnr-wrap {
