@@ -114,7 +114,52 @@
   background-image:
     url("../img/subpage/page-news-top.png"),
     url("../img/subpage/subpage-bottom.png");
+  background-color: #fff;
+  padding: 32px 0 100px;
 
+
+  &__desc-wrap {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto 80px;
+    gap: 40px;
+    align-items: center;
+    padding: 0 16px;
+
+    @include tab {
+      flex-direction: column-reverse;
+    }
+
+  }
+
+  &__desc-text-wrap {
+    max-width: 300px;
+
+    @include tab {
+      max-width: 400px;
+    }
+  }
+
+  &__since {
+    max-width: 240px;
+    margin: 0 0 12px;
+  }
+
+
+  &__desc-img {
+    flex: 1;
+
+    @include tab {
+      max-width: 500px;
+    }
+  }
+
+  &__desc-bottom {
+    max-width: 800px;
+    margin: 0 auto 80px;
+  }
+
+  &__manager-bottom {}
 
   &__ {}
 
@@ -124,11 +169,187 @@
 
   &__ {}
 
-  &__ {}
+}
 
-  &__ {}
+.about-manager {
 
-  &__ {}
+  &__item-wrap {
+    position: relative;
+    padding: 80px 0;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -10%;
+      top: 50%;
+      width: 120%;
+      height: 350px;
+      background: #eef6fd;
+      transform: translateY(-50%) skewY(-4deg);
+      transform-origin: center;
+      z-index: 0;
+    }
+
+    @include tab {
+      padding: 24px 0;
+      
+
+      &::before {
+        height: 700px;
+        transform: translateY(-50%) skewY(-3deg);
+      }
+    }
+  }
+
+  &__item {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 0 0 -40px;
+
+    &--reverse {
+      flex-direction: row-reverse;
+      gap: 40px;
+
+    }
+
+    @include tab {
+      flex-direction: column;
+      margin: 0 0 0;
+      gap: 12px;
+    }
+
+
+  }
+
+  &__top-img {
+    max-width: 280px;
+  }
+
+  &__top-text-wrap {}
+
+  &__top-ttl {
+    margin: 0 0 24px;
+    font-size: 18px;
+  }
+
+  &__top-lead {
+    border-left: $sub 5px solid;
+    padding: 0 0 0 16px;
+    font-size: 38px;
+    line-height: 1.4;
+    margin: 0 0 32px;
+    color: $main;
+    font-family:
+      "Hiragino Mincho ProN",
+      "Yu Mincho",
+      "游明朝",
+      "MS Mincho",
+      serif;
+
+    @include tab {
+      padding: 0 0 0 12px;
+      font-size: 24px;
+      margin: 0 0 12px;
+
+
+    }
+  }
+
+  &__bottom {
+    border: $sub 1px solid;
+    background-color: #fff;
+  }
+
+  &__name-box {
+    border-bottom: $sub 1px solid;
+    padding: 12px;
+
+  }
+
+  &__name {
+    text-align: center;
+    margin: 0 -300px 0 0;
+
+    &--reverse {
+      margin: 0 0 0 -300px;
+    }
+
+    @include tab {
+      margin: 0;
+    }
+  }
+
+  &__text-box {
+    display: flex;
+
+    @include tab {
+      flex-direction: column;
+      padding: 12px;
+    }
+  }
+
+  &__text {
+    padding: 12px;
+
+    @include tab {
+      padding: 0;
+    }
+
+    &--left {
+      border-right: $sub 1px solid;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        top: 0;
+        right: -5px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #fff;
+        bottom: 0;
+        right: -5px;
+      }
+
+      @include tab {
+        border-right: none;
+
+        &::before {
+          display: none;
+        }
+
+        &::after {
+          display: none;
+
+        }
+
+      }
+    }
+
+
+  }
 
   &__ {}
 
@@ -548,11 +769,14 @@
     @include tab {
       width: 100%;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+
     }
   }
 
   &__tab {
-    width:100px;
+    width: 100px;
     padding: 4px 0;
     border: 1px solid #ccc;
     background: #fff;
@@ -571,8 +795,8 @@
     }
 
     @include tab {
-      flex: 1 1 calc(50% - 8px);
-      min-width: auto;
+      width: 80px;
+
     }
   }
 
@@ -602,13 +826,45 @@
 
 .single {
   background-image:
-    url("../img/subpage/page-news-top.png"),
+    url("../img/subpage/single-results-top.png"),
     url("../img/subpage/subpage-bottom.png");
+  background-color: #fff;
+  padding: 60px 16px 120px;
+
+  @include tab {
+    padding: 32px 16px 40px;
+  }
 
 
-  &__ {}
+  &__title-wrap {
+    max-width: 800px;
+    margin: 0 auto 60px;
 
-  &__ {}
+    @include tab {
+      margin: 0 auto 32px;
+    }
+
+  }
+
+  &__title-date {
+    color: #1e1e1e;
+    font-size: 14px;
+    margin: 0 0 12px;
+  }
+
+  &__title {
+    color: #1e1e1e;
+    font-size: 22px;
+  }
+
+  &__content {
+    border: 1px solid #d9d9d9;
+    margin: 0 auto 80px;
+
+    @include tab {
+      margin: 0 auto 40px;
+    }
+  }
 
   &__ {}
 
@@ -638,7 +894,7 @@
 
 .page-contact {
   background-image:
-    url("../img/subpage/page-news-top.png"),
+    url("../img/subpage/page-contact-top.png"),
     url("../img/subpage/subpage-bottom.png");
 
 
@@ -832,7 +1088,7 @@
 
 .page-privacy {
   background-image:
-    url("../img/subpage/page-news-top.png"),
+    url("../img/subpage/page-privacy-top.png"),
     url("../img/subpage/subpage-bottom.png");
 
 

@@ -665,6 +665,191 @@
  ================================= */
 .page-about {
   background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+  background-color: #fff;
+  padding: 32px 0 100px;
+}
+.page-about__desc-wrap {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  gap: 40px;
+  align-items: center;
+  padding: 0 16px;
+}
+@media (max-width: 820px) {
+  .page-about__desc-wrap {
+    flex-direction: column-reverse;
+  }
+}
+.page-about__desc-text-wrap {
+  max-width: 300px;
+}
+@media (max-width: 820px) {
+  .page-about__desc-text-wrap {
+    max-width: 400px;
+  }
+}
+.page-about__since {
+  max-width: 240px;
+  margin: 0 0 12px;
+}
+.page-about__desc-img {
+  flex: 1;
+}
+@media (max-width: 820px) {
+  .page-about__desc-img {
+    max-width: 500px;
+  }
+}
+.page-about__desc-bottom {
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+.about-manager__item-wrap {
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+}
+.about-manager__item-wrap::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  width: 120%;
+  height: 350px;
+  background: #eef6fd;
+  transform: translateY(-50%) skewY(-4deg);
+  transform-origin: center;
+  z-index: 0;
+}
+@media (max-width: 820px) {
+  .about-manager__item-wrap {
+    padding: 24px 0;
+  }
+  .about-manager__item-wrap::before {
+    height: 700px;
+    transform: translateY(-50%) skewY(-3deg);
+  }
+}
+.about-manager__item {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.about-manager__item--reverse {
+  flex-direction: row-reverse;
+}
+.about-manager__top {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin: 0 0 -40px;
+}
+.about-manager__top--reverse {
+  flex-direction: row-reverse;
+  gap: 40px;
+}
+@media (max-width: 820px) {
+  .about-manager__top {
+    flex-direction: column;
+    margin: 0 0 0;
+    gap: 12px;
+  }
+}
+.about-manager__top-img {
+  max-width: 280px;
+}
+.about-manager__top-ttl {
+  margin: 0 0 24px;
+  font-size: 18px;
+}
+.about-manager__top-lead {
+  border-left: #2090ff 5px solid;
+  padding: 0 0 0 16px;
+  font-size: 38px;
+  line-height: 1.4;
+  margin: 0 0 32px;
+  color: #000080;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "游明朝", "MS Mincho", serif;
+}
+@media (max-width: 820px) {
+  .about-manager__top-lead {
+    padding: 0 0 0 12px;
+    font-size: 24px;
+    margin: 0 0 12px;
+  }
+}
+.about-manager__bottom {
+  border: #2090ff 1px solid;
+  background-color: #fff;
+}
+.about-manager__name-box {
+  border-bottom: #2090ff 1px solid;
+  padding: 12px;
+}
+.about-manager__name {
+  text-align: center;
+  margin: 0 -300px 0 0;
+}
+.about-manager__name--reverse {
+  margin: 0 0 0 -300px;
+}
+@media (max-width: 820px) {
+  .about-manager__name {
+    margin: 0;
+  }
+}
+.about-manager__text-box {
+  display: flex;
+}
+@media (max-width: 820px) {
+  .about-manager__text-box {
+    flex-direction: column;
+    padding: 12px;
+  }
+}
+.about-manager__text {
+  padding: 12px;
+}
+@media (max-width: 820px) {
+  .about-manager__text {
+    padding: 0;
+  }
+}
+.about-manager__text--left {
+  border-right: #2090ff 1px solid;
+  position: relative;
+}
+.about-manager__text--left::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  top: 0;
+  right: -5px;
+}
+.about-manager__text--left::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  bottom: 0;
+  right: -5px;
+}
+@media (max-width: 820px) {
+  .about-manager__text--left {
+    border-right: none;
+  }
+  .about-manager__text--left::before {
+    display: none;
+  }
+  .about-manager__text--left::after {
+    display: none;
+  }
 }
 /* =================================
 スケジュール
@@ -963,6 +1148,8 @@
   .page-news__tabs {
     width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
   }
 }
 .page-news__tab {
@@ -984,21 +1171,54 @@
 }
 @media (max-width: 820px) {
   .page-news__tab {
-    flex: 1 1 calc(50% - 8px);
-    min-width: auto;
+    width: 80px;
   }
 }
 /* =================================
 ニュース詳細
  ================================= */
 .single {
-  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+  background-image: url("../img/subpage/single-results-top.png"), url("../img/subpage/subpage-bottom.png");
+  background-color: #fff;
+  padding: 60px 16px 120px;
+}
+@media (max-width: 820px) {
+  .single {
+    padding: 32px 16px 40px;
+  }
+}
+.single__title-wrap {
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+@media (max-width: 820px) {
+  .single__title-wrap {
+    margin: 0 auto 32px;
+  }
+}
+.single__title-date {
+  color: #1e1e1e;
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+.single__title {
+  color: #1e1e1e;
+  font-size: 22px;
+}
+.single__content {
+  border: 1px solid #d9d9d9;
+  margin: 0 auto 80px;
+}
+@media (max-width: 820px) {
+  .single__content {
+    margin: 0 auto 40px;
+  }
 }
 /* =================================
 お問い合わせ
  ================================= */
 .page-contact {
-  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+  background-image: url("../img/subpage/page-contact-top.png"), url("../img/subpage/subpage-bottom.png");
 }
 .page-contact__lead {
   margin: 0 0 24px;
@@ -1168,7 +1388,7 @@
 個人情報保護方針
  ================================= */
 .page-privacy {
-  background-image: url("../img/subpage/page-news-top.png"), url("../img/subpage/subpage-bottom.png");
+  background-image: url("../img/subpage/page-privacy-top.png"), url("../img/subpage/subpage-bottom.png");
 }
 /* サイト全体スタイルシート */
 /* =========================
@@ -1213,17 +1433,17 @@ ul,
 ol,
 li {
   list-style: none;
-  font-size: clamp(0.875rem, 0.838rem + 0.19vw, 1rem);
+  font-size: clamp(0.875rem, 0.852rem + 0.11vw, 0.938rem);
 }
 
 table {
-  font-size: clamp(0.875rem, 0.838rem + 0.19vw, 1rem);
+  font-size: clamp(0.875rem, 0.852rem + 0.11vw, 0.938rem);
 }
 
 dd,
 dt {
   list-style: none;
-  font-size: clamp(0.875rem, 0.838rem + 0.19vw, 1rem);
+  font-size: clamp(0.875rem, 0.852rem + 0.11vw, 0.938rem);
 }
 
 /* =========================
