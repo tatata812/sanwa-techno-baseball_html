@@ -82,8 +82,13 @@
 
   &__track {
     display: flex;
-    width: fit-content;
-    animation: marquee 20s linear infinite;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+  }
+
+  &__group {
+    display: flex;
   }
 
   &__item {
@@ -97,24 +102,16 @@
     }
   }
 
-
   @include tab {
-    &__item {
-      width: 160px;
-    }
+    &__item { width: 160px; }
   }
 }
-
 
 @keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } // 1セット分だけ動かす
 }
+
 
 /* =================================
 クラブについて

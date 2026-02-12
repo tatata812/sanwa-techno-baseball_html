@@ -67,9 +67,13 @@
 }
 .marquee__track {
   display: flex;
-  width: -moz-fit-content;
-  width: fit-content;
-  animation: marquee 20s linear infinite;
+  width: -moz-max-content;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+.marquee__group {
+  display: flex;
 }
 .marquee__item {
   flex-shrink: 0;
