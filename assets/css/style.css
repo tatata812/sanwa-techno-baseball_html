@@ -668,6 +668,11 @@
   background-color: #fff;
   padding: 32px 0 100px;
 }
+.page-about__logo {
+  max-width: 540px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
+}
 .page-about__desc-wrap {
   display: flex;
   max-width: 800px;
@@ -705,6 +710,123 @@
   max-width: 800px;
   margin: 0 auto 80px;
 }
+.page-about__manager-bottom {
+  margin: 0 0 80px;
+}
+@media (max-width: 820px) {
+  .page-about__manager-bottom {
+    margin: 0 0 40px;
+  }
+}
+.page-about__features {
+  padding: 0 16px;
+}
+.page-about__features-item {
+  display: flex;
+  max-width: 840px;
+  margin: 0 auto 120px;
+  align-items: flex-end;
+  gap: 40px;
+}
+.page-about__features-item--reverse {
+  flex-direction: row-reverse;
+}
+@media (max-width: 820px) {
+  .page-about__features-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 60px;
+  }
+}
+.page-about__features-text-wrap {
+  max-width: 440px;
+}
+.page-about__features-img {
+  flex: 1;
+}
+.page-about__bnr-section {
+  padding: 180px 16px;
+  background: #f2f9ff;
+  clip-path: polygon(0 18%, 100% 0, 100% 82%, 0 100%);
+}
+@media (max-width: 820px) {
+  .page-about__bnr-section {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding: 40px 16px;
+  }
+}
+.page-about__bnr-title {
+  text-align: center;
+  margin: 0 0 80px;
+}
+@media (max-width: 820px) {
+  .page-about__bnr-title {
+    margin: 0 0 40px;
+  }
+}
+.page-about__bnr-title-en {
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0 0 8px;
+  position: relative;
+  display: inline-block;
+}
+.page-about__bnr-title-en::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: #2f80ed;
+  border-radius: 2px;
+}
+@media (max-width: 820px) {
+  .page-about__bnr-title-en {
+    font-size: 24px;
+  }
+}
+.page-about__bnr-title-jp {
+  font-size: 16px;
+  margin: 0;
+}
+@media (max-width: 820px) {
+  .page-about__bnr-title-jp {
+    font-size: 12px;
+  }
+}
+.page-about__bnr-wrap {
+  max-width: 880px;
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+}
+@media (max-width: 820px) {
+  .page-about__bnr-wrap {
+    padding: 0 16px;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.page-about__bnr-item {
+  width: calc((100% - 80px) / 3);
+}
+@media (max-width: 820px) {
+  .page-about__bnr-item {
+    width: calc((100% - 32px) / 2);
+  }
+}
+@media (max-width: 600px) {
+  .page-about__bnr-item {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 .about-manager__item-wrap {
   position: relative;
   padding: 80px 0;
@@ -750,6 +872,7 @@
 .about-manager__top--reverse {
   flex-direction: row-reverse;
   gap: 40px;
+  justify-content: flex-end;
 }
 @media (max-width: 820px) {
   .about-manager__top {
@@ -761,14 +884,30 @@
 .about-manager__top-img {
   max-width: 280px;
 }
+@media (max-width: 820px) {
+  .about-manager__top-img {
+    max-width: 240px;
+  }
+}
+@media (max-width: 820px) {
+  .about-manager__top-text-wrap {
+    margin: 0 auto 12px 0;
+  }
+}
 .about-manager__top-ttl {
   margin: 0 0 24px;
   font-size: 18px;
 }
+@media (max-width: 820px) {
+  .about-manager__top-ttl {
+    font-size: 16px;
+    margin: 0 0 20px;
+  }
+}
 .about-manager__top-lead {
   border-left: #2090ff 5px solid;
   padding: 0 0 0 16px;
-  font-size: 38px;
+  font-size: 34px;
   line-height: 1.4;
   margin: 0 0 32px;
   color: #000080;
@@ -777,7 +916,7 @@
 @media (max-width: 820px) {
   .about-manager__top-lead {
     padding: 0 0 0 12px;
-    font-size: 24px;
+    font-size: 22px;
     margin: 0 0 12px;
   }
 }
@@ -826,7 +965,7 @@
   content: "";
   position: absolute;
   width: 8px;
-  height: 8px;
+  height: 12px;
   background: #fff;
   top: 0;
   right: -5px;
@@ -835,7 +974,7 @@
   content: "";
   position: absolute;
   width: 8px;
-  height: 8px;
+  height: 12px;
   background: #fff;
   bottom: 0;
   right: -5px;
@@ -851,14 +990,16 @@
     display: none;
   }
 }
+
 /* =================================
 スケジュール
  ================================= */
 .page-schedule {
   background-image: url("../img/subpage/page-schedule-top.png"), url("../img/subpage/subpage-bottom.png");
 }
+
 /* =================================
-スケジュール
+試合結果
  ================================= */
 .page-results {
   background-image: url("../img/subpage/page-results-top.png"), url("../img/subpage/subpage-bottom.png");
@@ -1053,12 +1194,156 @@
     width: 56px;
   }
 }
+
 /* =================================
 部員名簿
  ================================= */
 .page-player {
   background-image: url("../img/subpage/page-player-top.png"), url("../img/subpage/subpage-bottom.png");
 }
+.page-player__tabs {
+  display: flex;
+  gap: 16px;
+  margin: 0 0 80px;
+}
+@media (max-width: 820px) {
+  .page-player__tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 40px;
+  }
+}
+.page-player__tab {
+  width: calc((100% - 64px) / 5);
+  padding: 10px 0;
+  border-radius: 8px;
+  background: #cfcfcf;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  border: none;
+  font-size: 18px;
+}
+.page-player__tab:hover {
+  opacity: 0.85;
+}
+.page-player__tab.is-active {
+  background: linear-gradient(180deg, #1e90ff 0%, #007bff 100%);
+}
+@media (max-width: 820px) {
+  .page-player__tab {
+    font-size: 12px;
+    width: calc((100% - 30px) / 5);
+    border-radius: 4px;
+  }
+}
+.page-player__section-ttl {
+  border-left: #2090ff 5px solid;
+  padding: 0 0 0 16px;
+  font-size: 34px;
+  line-height: 1.4;
+  margin: 0 0 32px;
+  color: #000080;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "游明朝", "MS Mincho", serif;
+}
+@media (max-width: 820px) {
+  .page-player__section-ttl {
+    padding: 0 0 0 12px;
+    font-size: 22px;
+    margin: 0 0 24px;
+  }
+}
+.page-player__section {
+  margin: 0 0 80px;
+}
+@media (max-width: 820px) {
+  .page-player__section {
+    margin: 0 0 60px;
+  }
+}
+.page-player__section:last-of-type {
+  margin: 0 0 40px;
+}
+@media (max-width: 820px) {
+  .page-player__section:last-of-type {
+    margin: 0 0 24px;
+  }
+}
+
+.player-card {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+@media (max-width: 820px) {
+  .player-card {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.player-card__item {
+  width: calc((100% - 32px) / 2);
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+@media (max-width: 820px) {
+  .player-card__item {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+.player-card__top {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 0 7px;
+  margin: 0 0 3px;
+}
+.player-card__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  width: 50%;
+}
+.player-card__img img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.player-card__text-wrap {
+  width: 50%;
+}
+.player-card__number {
+  color: #2090ff;
+  font-size: 53px;
+  font-weight: 900;
+  line-height: 1;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0 12px 12px;
+  margin: 0 0 16px;
+}
+.player-card__position {
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+.player-card__name {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+.player-card__kana {
+  font-size: 13px;
+  color: #b8b8b8;
+}
+.player-card__bottom {
+  font-size: 13px;
+}
+
 /* =================================
 ニュース
  ================================= */
@@ -1174,6 +1459,7 @@
     width: 80px;
   }
 }
+
 /* =================================
 ニュース詳細
  ================================= */
@@ -1214,6 +1500,7 @@
     margin: 0 auto 40px;
   }
 }
+
 /* =================================
 お問い合わせ
  ================================= */
@@ -1390,6 +1677,7 @@
 .page-privacy {
   background-image: url("../img/subpage/page-privacy-top.png"), url("../img/subpage/subpage-bottom.png");
 }
+
 /* サイト全体スタイルシート */
 /* =========================
    base（全ページ共通）
@@ -1405,18 +1693,18 @@ html {
 
 body {
   line-height: 1.8;
-  color: #141414;
+  color: #555;
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", "Yu Gothic", "YuGothic", sans-serif;
   font-family: "Noto Sans", sans-serif;
 }
 
 p {
   font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
-  color: #141414;
+  color: #555;
 }
 
 a {
-  color: #141414;
+  color: #555;
 }
 a:hover {
   cursor: pointer;
@@ -1467,9 +1755,6 @@ dt {
   }
 }
 
-/* =========================
-   メイン
-========================= */
 /* =========================
    パンくずリスト
 ========================= */
@@ -1805,6 +2090,7 @@ body.is-stuck .site-header__spacer {
     right: 20px;
   }
 }
+
 /* =====================================================
   Scroll Fade-in Animation
   ・JSで .action が付与されると表示される
@@ -1917,7 +2203,7 @@ body.is-stuck .site-header__spacer {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInOnLoad02 1.5s ease forwards;
-  animation-delay: 1.5s;
+  animation-delay: 0.7s;
 }
 
 @keyframes fadeInOnLoad02 {

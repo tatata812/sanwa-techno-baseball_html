@@ -18,7 +18,7 @@ html {
 
 body {
   line-height: 1.8;
-  color: #141414;
+  color: #555;
   font-family: -apple-system, BlinkMacSystemFont,
     "Hiragino Kaku Gothic ProN", "Hiragino Sans",
     "Meiryo", "Yu Gothic", "YuGothic",
@@ -29,12 +29,12 @@ body {
 
 p {
   font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
-  color: #141414;
+  color: #555;
 
 }
 
 a {
-  color: #141414;
+  color: #555;
 
   &:hover {
     cursor: pointer;
@@ -86,23 +86,6 @@ dt {
 }
 
 /* =========================
-   メイン
-========================= */
-
-// .main {
-//   margin: 90px 0 0;
-//   height: 1000px;
-
-//   @include pc {
-//     margin: 64px 0 0;
-//   }
-
-//   @include tab {
-//     margin: 56px 0 0;
-//   }
-// }
-
-/* =========================
    パンくずリスト
 ========================= */
 .breadcrumbs-wrap {
@@ -119,7 +102,6 @@ dt {
     }
   }
 }
-
 
 /* =========================
   ヘッダー
@@ -463,7 +445,6 @@ body.is-stuck {
     @include tab {
       font-size: 11px;
       margin: 0 0 12px;
-
     }
   }
 
@@ -477,30 +458,9 @@ body.is-stuck {
       width: 60px;
       top: -20px;
       right: 20px;
-
     }
   }
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
-
 
 
 
@@ -604,8 +564,6 @@ body.is-stuck {
 }
 
 
-
-
 /* =========================
    ロード
 ========================= */
@@ -625,7 +583,7 @@ body.is-stuck {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInOnLoad02 1.5s ease forwards;
-  animation-delay: 1.5s;
+  animation-delay: 0.7s;
 }
 
 @keyframes fadeInOnLoad02 {
@@ -909,8 +867,6 @@ body.is-stuck {
 }
 
 
-
-
 /* =========================
    共通パーツ
 ========================= */
@@ -966,7 +922,6 @@ body.is-stuck {
   }
 }
 
-// ニュース一覧
 // ニュース一覧
 .news-list {
   border-top: 1px solid #cfcfcf;

@@ -6,7 +6,6 @@
 /* =================================
 下層ページ共通
  ================================= */
-
 .subpage {
   background-color: $bg;
   padding: 60px 16px 240px;
@@ -117,6 +116,11 @@
   background-color: #fff;
   padding: 32px 0 100px;
 
+  &__logo {
+    max-width: 540px;
+    margin: 40px auto 80px;
+    padding: 0 24px;
+  }
 
   &__desc-wrap {
     display: flex;
@@ -129,7 +133,6 @@
     @include tab {
       flex-direction: column-reverse;
     }
-
   }
 
   &__desc-text-wrap {
@@ -145,7 +148,6 @@
     margin: 0 0 12px;
   }
 
-
   &__desc-img {
     flex: 1;
 
@@ -159,16 +161,128 @@
     margin: 0 auto 80px;
   }
 
-  &__manager-bottom {}
+  &__manager-bottom {
+    margin: 0 0 80px;
 
-  &__ {}
+    @include tab {
+      margin: 0 0 40px;
+    }
+  }
 
-  &__ {}
+  &__features {
+    padding: 0 16px;
+  }
 
-  &__ {}
+  &__features-item {
+    display: flex;
+    max-width: 840px;
+    margin: 0 auto 120px;
+    align-items: flex-end;
+    gap: 40px;
 
-  &__ {}
+    &--reverse {
+      flex-direction: row-reverse;
+    }
 
+    @include tab {
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin: 0 auto 60px;
+    }
+  }
+
+  &__features-text-wrap {
+    max-width: 440px;
+  }
+
+
+  &__features-text {}
+
+  &__features-img {
+    flex: 1;
+  }
+
+  &__bnr-section {
+    padding: 180px 16px;
+    background: #f2f9ff;
+    clip-path: polygon(0 18%, 100% 0, 100% 82%, 0 100%);
+
+    @include tab {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      padding: 40px 16px;
+    }
+  }
+
+  &__bnr-title {
+    text-align: center;
+    margin: 0 0 80px;
+
+    @include tab {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__bnr-title-en {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 8px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      transform: translateX(-50%);
+      width: 56px;
+      height: 3px;
+      background: #2f80ed; // 下の青線
+      border-radius: 2px;
+    }
+
+    @include tab {
+      font-size: 24px;
+    }
+  }
+
+  &__bnr-title-jp {
+    font-size: 16px;
+    margin: 0;
+
+    @include tab {
+      font-size: 12px;
+    }
+  }
+
+  &__bnr-wrap {
+    max-width: 880px;
+    display: flex;
+    gap: 40px;
+    margin: 0 auto;
+
+    @include tab {
+      padding: 0 16px;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__bnr-item {
+    width: calc((100% - 80px) /3);
+
+    @include tab {
+      width: calc((100% - 32px) /2);
+    }
+
+    @include sp {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
 }
 
 .about-manager {
@@ -193,7 +307,6 @@
 
     @include tab {
       padding: 24px 0;
-      
 
       &::before {
         height: 700px;
@@ -223,7 +336,7 @@
     &--reverse {
       flex-direction: row-reverse;
       gap: 40px;
-
+      justify-content: flex-end;
     }
 
     @include tab {
@@ -231,25 +344,38 @@
       margin: 0 0 0;
       gap: 12px;
     }
-
-
   }
 
   &__top-img {
     max-width: 280px;
+
+    @include tab {
+      max-width: 240px;
+    }
   }
 
-  &__top-text-wrap {}
+  &__top-text-wrap {
+
+    @include tab {
+      margin: 0 auto 12px 0;
+      ;
+    }
+  }
 
   &__top-ttl {
     margin: 0 0 24px;
     font-size: 18px;
+
+    @include tab {
+      font-size: 16px;
+      margin: 0 0 20px;
+    }
   }
 
   &__top-lead {
     border-left: $sub 5px solid;
     padding: 0 0 0 16px;
-    font-size: 38px;
+    font-size: 34px;
     line-height: 1.4;
     margin: 0 0 32px;
     color: $main;
@@ -262,10 +388,8 @@
 
     @include tab {
       padding: 0 0 0 12px;
-      font-size: 24px;
+      font-size: 22px;
       margin: 0 0 12px;
-
-
     }
   }
 
@@ -317,7 +441,7 @@
         content: "";
         position: absolute;
         width: 8px;
-        height: 8px;
+        height: 12px;
         background: #fff;
         top: 0;
         right: -5px;
@@ -327,7 +451,7 @@
         content: "";
         position: absolute;
         width: 8px;
-        height: 8px;
+        height: 12px;
         background: #fff;
         bottom: 0;
         right: -5px;
@@ -342,23 +466,10 @@
 
         &::after {
           display: none;
-
         }
-
       }
     }
-
-
   }
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
 
 /* =================================
@@ -369,41 +480,16 @@
   background-image:
     url("../img/subpage/page-schedule-top.png"),
     url("../img/subpage/subpage-bottom.png");
-
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
 
 /* =================================
-スケジュール
+試合結果
  ================================= */
 
 .page-results {
   background-image:
     url("../img/subpage/page-results-top.png"),
     url("../img/subpage/subpage-bottom.png");
-
 
 }
 
@@ -430,7 +516,6 @@
     @include tab {
       margin: 0 auto 60px;
     }
-
   }
 
   &__title-date {
@@ -508,7 +593,6 @@
       border-left: none;
     }
   }
-
 
 
   // 試合結果
@@ -622,24 +706,6 @@
       }
     }
   }
-
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
 
 /* =================================
@@ -651,29 +717,164 @@
     url("../img/subpage/page-player-top.png"),
     url("../img/subpage/subpage-bottom.png");
 
+  &__tabs {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 80px;
 
-  &__ {}
+    @include tab {
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 40px;
 
-  &__ {}
+    }
+  }
 
-  &__ {}
+  &__tab {
+    width: calc((100% - 64px) / 5);
+    padding: 10px 0;
+    border-radius: 8px;
+    background: #cfcfcf;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+    border: none;
+    font-size: 18px;
 
-  &__ {}
+    &:hover {
+      opacity: 0.85;
+    }
 
-  &__ {}
+    &.is-active {
+      background: linear-gradient(180deg, #1e90ff 0%, #007bff 100%);
+    }
 
-  &__ {}
+    @include tab {
+      font-size: 12px;
+      width: calc((100% - 30px) / 5);
+      border-radius: 4px;
+    }
+  }
 
-  &__ {}
+  &__section-ttl {
+    border-left: $sub 5px solid;
+    padding: 0 0 0 16px;
+    font-size: 34px;
+    line-height: 1.4;
+    margin: 0 0 32px;
+    color: $main;
+    font-family:
+      "Hiragino Mincho ProN",
+      "Yu Mincho",
+      "游明朝",
+      "MS Mincho",
+      serif;
 
-  &__ {}
+    @include tab {
+      padding: 0 0 0 12px;
+      font-size: 22px;
+      margin: 0 0 24px;
+    }
+  }
 
-  &__ {}
+  &__section {
+    margin: 0 0 80px;
 
-  &__ {}
+    @include tab {
+      margin: 0 0 60px;
+    }
 
-  &__ {}
+    &:last-of-type {
+      margin: 0 0 40px;
 
+      @include tab {
+        margin: 0 0 24px;
+      }
+    }
+  }
+}
+
+.player-card {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+
+  @include tab {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    width: calc((100% - 32px) / 2);
+    border: 1px solid #ccc;
+    padding: 8px;
+
+    @include tab {
+      width: 100%;
+      max-width: 360px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 7px;
+    margin: 0 0 3px;
+
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    width: 50%;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text-wrap {
+    width: 50%;
+
+  }
+
+  &__number {
+    color: $sub;
+    font-size: 53px;
+    font-weight: 900;
+    line-height: 1;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0 12px 12px;
+    margin: 0 0 16px;
+  }
+
+  &__position {
+    font-size: 13px;
+    margin: 0 0 8px;
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+
+  &__kana {
+    font-size: 13px;
+    color: #b8b8b8;
+  }
+
+  &__bottom {
+    font-size: 13px;
+  }
 }
 
 /* =================================
@@ -684,7 +885,6 @@
   background-image:
     url("../img/subpage/page-news-top.png"),
     url("../img/subpage/subpage-bottom.png");
-
 
   &__head {
     margin-bottom: 40px;
@@ -799,25 +999,6 @@
 
     }
   }
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
 
 /* =================================
@@ -834,7 +1015,6 @@
   @include tab {
     padding: 32px 16px 40px;
   }
-
 
   &__title-wrap {
     max-width: 800px;
@@ -865,25 +1045,6 @@
       margin: 0 auto 40px;
     }
   }
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
 
 
@@ -1076,10 +1237,6 @@
       max-width: 100%;
     }
   }
-
-
-
-
 }
 
 /* =================================
@@ -1090,36 +1247,4 @@
   background-image:
     url("../img/subpage/page-privacy-top.png"),
     url("../img/subpage/subpage-bottom.png");
-
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
-  &__ {}
-
 }
